@@ -1,0 +1,61 @@
+{
+  "id": "urn:ngsi-ld:system_hours:id:FNNO:60592292",
+  "type": "system_hours",
+  "last_updated": {
+    "type": "Number",
+    "value": 1609866247
+  },
+  "ttl": {
+    "type": "Number",
+    "value": 86400
+  },
+  "version": {
+    "type": "Text",
+    "value": "3.0"
+  },
+  "data": {
+    "type": "StructuredValue",
+    "value": {
+      "rental_hours": [
+        {
+          "user_types": [
+            "member"
+          ],
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "start_time": "00:00:00",
+          "end_time": "23:59:59"
+        },
+        {
+          "user_types": [
+            "nonmember"
+          ],
+          "days": [
+            "sat",
+            "sun"
+          ],
+          "start_time": "05:00:00",
+          "end_time": "23:59:59"
+        },
+        {
+          "user_types": [
+            "member",
+            "nonmember"
+          ],
+          "days": [
+            "mon",
+            "tue",
+            "wed",
+            "thu",
+            "fri"
+          ],
+          "start_time": "00:00:00",
+          "end_time": "23:59:59"
+        }
+      ]
+    }
+  }
+}
+

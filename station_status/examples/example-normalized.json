@@ -1,0 +1,89 @@
+{
+  "id": "urn:ngsi-ld:station_status:id:FNNO:60592292",
+  "type": "station_status",
+  "last_updated": {
+    "type": "Number",
+    "value": 1609866247
+  },
+  "ttl": {
+    "type": "Number",
+    "value": 0
+  },
+  "version": {
+    "type": "Text",
+    "value": "3.0"
+  },
+  "data": {
+    "type": "StructuredValue",
+    "value": {
+      "stations": [
+        {
+          "station_id": "station1",
+          "is_installed": true,
+          "is_renting": true,
+          "is_returning": true,
+          "last_reported": 1609866125,
+          "num_docks_available": 3,
+          "vehicle_docks_available": [
+            {
+              "vehicle_type_ids": [
+                "abc123"
+              ],
+              "count": 2
+            },
+            {
+              "vehicle_type_ids": [
+                "def456"
+              ],
+              "count": 1
+            }
+          ],
+          "num_bikes_available": 1,
+          "vehicle_types_available": [
+            {
+              "vehicle_type_id": "abc123",
+              "count": 1
+            },
+            {
+              "vehicle_type_id": "def456",
+              "count": 0
+            }
+          ]
+        },
+        {
+          "station_id": "station2",
+          "is_installed": true,
+          "is_renting": true,
+          "is_returning": true,
+          "last_reported": 1609866106,
+          "num_docks_available": 8,
+          "vehicle_docks_available": [
+            {
+              "vehicle_type_ids": [
+                "abc123"
+              ],
+              "count": 6
+            },
+            {
+              "vehicle_type_ids": [
+                "def456"
+              ],
+              "count": 2
+            }
+          ],
+          "num_bikes_available": 6,
+          "vehicle_types_available": [
+            {
+              "vehicle_type_id": "abc123",
+              "count": 2
+            },
+            {
+              "vehicle_type_id": "def456",
+              "count": 4
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

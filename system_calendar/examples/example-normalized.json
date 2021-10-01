@@ -1,0 +1,31 @@
+{
+  "id": "urn:ngsi-ld:system_calendar:id:FNNO:60592292",
+  "type": "system_calendar",
+  "last_updated": {
+    "type": "Number",
+    "value": 1604333830
+  },
+  "ttl": {
+    "type": "Number",
+    "value": 86400
+  },
+  "version": {
+    "type": "Text",
+    "value": "3.0"
+  },
+  "data": {
+    "type": "StructuredValue",
+    "value": {
+      "calendars": [
+        {
+          "start_month": 4,
+          "start_day": 1,
+          "start_year": 2020,
+          "end_month": 11,
+          "end_day": 5,
+          "end_year": 2020
+        }
+      ]
+    }
+  }
+}

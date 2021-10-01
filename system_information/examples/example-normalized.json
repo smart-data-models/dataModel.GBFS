@@ -1,0 +1,44 @@
+{
+  "id": "urn:ngsi-ld:system_information:id:FNNO:60592292",
+  "type": "system_information",
+  "last_updated": {
+    "type": "Number",
+    "value": 1611598155
+  },
+  "ttl": {
+    "type": "Number",
+    "value": 1800
+  },
+  "version": {
+    "type": "Text",
+    "value": "3.0"
+  },
+  "data": {
+    "type": "StructuredValue",
+    "value": {
+      "system_id": "example_cityname",
+      "language": "en",
+      "name": "Example Bike Rental",
+      "short_name": "Example Bike",
+      "operator": "Example Sharing, Inc",
+      "url": "https://www.example.com",
+      "purchase_url": "https://www.example.com",
+      "start_date": "2010-06-10",
+      "phone_number": "1-800-555-1234",
+      "email": "customerservice@example.com",
+      "feed_contact_email": "datafeed@example.com",
+      "timezone": "US/Central",
+      "license_url": "https://www.example.com/data-license.html",
+      "brand_assets": {
+        "brand_last_modified": "2021-06-15",
+        "brand_image_url": "https://www.example.com/assets/brand_image.svg",
+        "brand_image_url_dark": "https://www.example.com/assets/brand_image_dark.svg",
+        "color": "#C2D32C",
+        "terms_url": "https://www.example.com/assets/brand.pdf"
+      }
+    }
+  },
+  "@context": [
+    "https://smartdatamodels.org/context.jsonld"
+  ]
+}
