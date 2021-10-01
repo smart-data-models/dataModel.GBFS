@@ -1,9 +1,184 @@
-description: This is a compilation list of all CONTRIBUTORS across different objects (data models) alphabetically ordered. All fields are non mandatory
+description: This is a compilation list of all CONTRIBUTORS across different objects (data models) alphabetically ordered of the subject dataModel.GBFS. All fields are  non mandatory. This list is provisional and it could be extended when more information is available. 
 contributors:
 -
- name:
- surname:
- mail:
- organization:
- project: 
- comments:
+  name: contra
+  surname:
+  mail: yo@contra.io
+  organization: @staeco
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Daniel
+  surname:
+  mail:
+  organization:
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: DaveVSDave
+  surname:
+  mail:
+  organization: davevsdave
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Jerry
+  surname:
+  mail:
+  organization:
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: heidiguenin
+  surname:
+  mail:
+  organization: @trilliumtransit @MobilityData
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Aaron
+  surname: Antrim
+  mail: aaron@trilliumtransit.com
+  organization: Trillium @trilliumtransit
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Sean
+  surname: Barbeau
+  mail:
+  organization: @CUTR-at-USF
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Hassene
+  surname: Ben Salem
+  mail:
+  organization: qucit
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Sven
+  surname: Boor
+  mail:
+  organization:
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Peter
+  surname: C
+  mail:
+  organization:
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Jesse
+  surname: Chan-Norris
+  mail:
+  organization:
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Benoit
+  surname: Deldicque
+  mail:
+  organization:
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Marc-Andre
+  surname: Dupras
+  mail:
+  organization:
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Andrew
+  surname: Fischer
+  mail:
+  organization: @newsdev at @nytimes
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Frank
+  surname: Hebbert
+  mail:
+  organization: Lyft
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Alex
+  surname: Hill
+  mail:
+  organization:
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Chartsiri
+  surname: Jirachotkulthorn
+  mail:
+  organization:
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Nick
+  surname: Lucius
+  mail:
+  organization: City of @Chicago
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Brooke
+  surname: McKim
+  mail: 
+  organization: 
+  project: 
+  comments: original contributor of GBFS standard
+-
+  name: Cyrille
+  surname: Medard de Chardon
+  mail: 
+  organization: LISER
+  project: 
+  comments: original contributor of GBFS standard
+-
+  name: Colin
+  surname: McGlynn
+  mail: 
+  organization: TransitScreen
+  project: 
+  comments: original contributor of GBFS standard
+-
+  name: Kostiantyn
+  surname: Plakhotia
+  mail: 
+  organization: Equal Entry LLC
+  project: 
+  comments: original contributor of GBFS standard
+-
+  name: Marcin
+  surname: Pyla
+  mail:
+  organization: Leftbrain
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Josee
+  surname: Sabourin
+  mail:
+  organization: MobilityData IO
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Evan
+  surname: Siroky
+  mail: evan.siroky@yahoo.com
+  organization: @ibi-group
+  project:
+  comments: original contributor of GBFS standard
+-
+  name: Mitch
+  surname: Vars
+  mail:
+  organization: Mobility Data IO
+  project:
+  comments: original contributor of GBFS standard
