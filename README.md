@@ -5,6 +5,8 @@
 The following entity types are available:
 - [free_bike_status](https://github.com/smart-data-models/dataModel.GBFS/blob/master/free_bike_status/README.md). Describes the vehicles that are available for rent (as of v2.1-RC2). According to the Standard GBFS 2.2
 
+- [gbfs](https://github.com/smart-data-models/dataModel.GBFS/blob/master/gbfs/README.md). Auto-discovery file that links to all of the other files published by the system. According to the Standard GBFS 2.2
+
 
 
 ### Contributors
