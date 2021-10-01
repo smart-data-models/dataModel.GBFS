@@ -1,0 +1,2 @@
+"id_", "type_", "last_updated__type_", "last_updated__value_", "ttl__type_", "ttl__value_", "version__type_", "version__value_", "data__type_", "data__value__versions__0__version_", "data__value__versions__0__url_", "data__value__versions__1__version_", "data__value__versions__1__url_"
+"urn:ngsi-ld:gbfs_versions:id:BZXQ:05985472", "gbfs_versions", "Number", "1450156427", "Number", "576", "Text", "2.0", "StructuredValue", "3.0-RC", "urn:ngsi-ld:gbfs_versions:url:OOKT:50451777", "1.1-RC", "urn:ngsi-ld:gbfs_versions:url:ZPWS:72960398"
