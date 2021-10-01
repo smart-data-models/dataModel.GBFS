@@ -1,0 +1,2 @@
+"id_", "type_", "last_updated_", "ttl_", "version_", "data__regions__0__name_", "data__regions__0__region_id_", "data__regions__1__name_", "data__regions__1__region_id_", "data__regions__2__name_", "data__regions__2__region_id_", "data__regions__3__name_", "data__regions__3__region_id_"
+"urn:ngsi-ld:system_regions:id:FNNO:60592292", "system_regions", "1604332380", "86400", "3.0", "North", "3", "East", "4", "South", "5", "West", "6"
