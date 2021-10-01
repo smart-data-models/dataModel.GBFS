@@ -1,0 +1,2 @@
+"id_", "type_", "last_updated_", "ttl_", "version_", "data__calendars__0__start_month_", "data__calendars__0__start_day_", "data__calendars__0__start_year_", "data__calendars__0__end_month_", "data__calendars__0__end_day_", "data__calendars__0__end_year_"
+"urn:ngsi-ld:system_calendar:id:FNNO:60592292", "system_calendar", "1604333830", "86400", "3.0", "4", "1", "2020", "11", "5", "2020"
