@@ -1,8 +1,8 @@
-description: This is a compilation list of the current adopters of the data model free_bike_status of the Subject dataModel.GBFS. All fields are non mandatory. More info at https://smart-data-models.github.io/data-models/templates/dataModel/CURRENT_ADOPTERS.yaml
+description: This is a compilation list of the current adopters of the data model free_bike_status of the Subject dataModel.GBFS.
 currentAdopters:
 -
- adopter: IUDX
- description: Used by various institutions for Air Quality Monitoring.
+ adopter:
+ description:
  mail: 
  organization: 
  project: 

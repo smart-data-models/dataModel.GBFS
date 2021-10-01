@@ -18,18 +18,18 @@
       ]
     },
     "last_updated": {
-      "description": "Property. Last time the data in the feed was updated in POSIX time.",
       "type": "integer",
+      "description": "Property. Last time the data in the feed was updated in POSIX time.",
       "minimum": 1450155600
     },
     "ttl": {
-      "description": "Property. Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
       "type": "integer",
+      "description": "Property. Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
       "minimum": 0
     },
     "version": {
-      "description": "Property. GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
+      "description": "Property. GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "enum": [
         "2.2",
         "3.0-RC",
@@ -37,8 +37,8 @@
       ]
     },
     "data": {
-      "description": "Property. Array that contains one object per bike as defined below.",
       "type": "object",
+      "description": "Property. Array that contains one object per bike as defined below.",
       "properties": {
         "bikes": {
           "type": "array",
