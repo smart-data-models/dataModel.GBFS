@@ -1,1 +1,8 @@
-{"@context": {"data": "https://smartdatamodels.org/dataModel.GBFS/data__object", "last_updated": "https://smartdatamodels.org/dataModel.GBFS/last_updated__integer", "ttl": "https://smartdatamodels.org/dataModel.GBFS/ttl__integer", "version": "https://smartdatamodels.org/dataModel.GBFS/version__string"}}
+{
+    "@context": {
+        "data": "https://smartdatamodels.org/dataModel.GBFS/data__object",
+        "last_updated": "https://smartdatamodels.org/dataModel.GBFS/last_updated__integer",
+        "ttl": "https://smartdatamodels.org/dataModel.GBFS/ttl__integer",
+        "version": "https://smartdatamodels.org/dataModel.GBFS/version__string"
+    }
+}
