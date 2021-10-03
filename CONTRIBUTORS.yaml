@@ -4,7 +4,7 @@ contributors:
   name: contra
   surname:
   mail: yo@contra.io
-  organization: @staeco
+  organization: "@staeco"
   project:
   comments: original contributor of GBFS standard
 -
@@ -32,7 +32,7 @@ contributors:
   name: heidiguenin
   surname:
   mail:
-  organization: @trilliumtransit @MobilityData
+  organization: "@trilliumtransit @MobilityData"
   project:
   comments: original contributor of GBFS standard
 -
@@ -46,7 +46,7 @@ contributors:
   name: Sean
   surname: Barbeau
   mail:
-  organization: @CUTR-at-USF
+  organization: "@CUTR-at-USF"
   project:
   comments: original contributor of GBFS standard
 -
@@ -95,7 +95,7 @@ contributors:
   name: Andrew
   surname: Fischer
   mail:
-  organization: @newsdev at @nytimes
+  organization: "@newsdev at @nytimes"
   project:
   comments: original contributor of GBFS standard
 -
@@ -172,7 +172,7 @@ contributors:
   name: Evan
   surname: Siroky
   mail: evan.siroky@yahoo.com
-  organization: @ibi-group
+  organization: "@ibi-group"
   project:
   comments: original contributor of GBFS standard
 -
