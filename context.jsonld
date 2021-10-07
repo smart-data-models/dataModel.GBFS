@@ -1,10 +1,10 @@
 {
     "@context": {
         "data": "https://smartdatamodels.org/dataModel.GBFS/data",
-        "id": "@id",
+        "id": "https://smartdatamodels.org/dataModel.GBFS/id",
         "last_updated": "https://smartdatamodels.org/dataModel.GBFS/last_updated",
         "ttl": "https://smartdatamodels.org/dataModel.GBFS/ttl",
-        "type": "@type",
+        "type": "https://smartdatamodels.org/dataModel.GBFS/type",
         "version": "https://smartdatamodels.org/dataModel.GBFS/version"
     }
 }
