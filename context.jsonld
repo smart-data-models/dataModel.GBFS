@@ -1,6 +1,6 @@
 {
     "@context": {
-        "data": "https://smartdatamodels.org/dataModel.GBFS/data",
+        "data": "ngsi-ld:data",
         "id": "@id",
         "last_updated": "https://smartdatamodels.org/dataModel.GBFS/last_updated",
         "ttl": "https://smartdatamodels.org/dataModel.GBFS/ttl",
