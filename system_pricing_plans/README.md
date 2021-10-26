@@ -8,7 +8,7 @@ Describes the pricing schemes of the system. According to the Standard GBFS 2.2
 Mapping of the Standard [GBFS 2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)
 ### Specification
 
-Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://github.com/smart-data-models/dataModel.GBFS/blob/master/system_pricing_plans/swagger.yaml)
+Link to the [interactive specification](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/system_pricing_plans/swagger.yaml)
 
 Link to the [specification](https://github.com/smart-data-models/dataModel.GBFS/blob/master/system_pricing_plans/doc/spec.md)
 
