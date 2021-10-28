@@ -196,7 +196,7 @@ station_information:
 </details>    
 ## Exemples de charges utiles  
 #### station_information NGSI-v2 key-values Exemple  
-Voici un exemple de station_information au format JSON-LD sous forme de valeurs-clés. Ceci est compatible avec NGSI-v2 quand on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
+Voici un exemple de station_information au format JSON-LD en tant que valeurs-clés. Ceci est compatible avec NGSI-v2 quand on utilise `options=keyValues` et renvoie les données contextuelles d'une entité individuelle.  
 ```json  
 {  
   "id": "urn:ngsi-ld:station_information:id:FNNO:60592292",  
