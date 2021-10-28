@@ -209,7 +209,7 @@ system_calendar:
 }  
 ```  
 #### system_calendar NGSI-LD normalizado Ejemplo  
-He aquí un ejemplo de system_calendar en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+Este es un ejemplo de system_calendar en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
 ```json  
 {  
   "id": "urn:ngsi-ld:system_calendar:id:FNNO:60592292",  
