@@ -148,7 +148,7 @@ system_alerts:
 </details>    
 ## ペイロードの例  
 #### system_alerts NGSI-v2 key-values の例。  
-system_alertsをkey-valuesとしてJSON-LD形式で出力した例です。これは、`options=keyValues`を使用した場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
+ここでは、JSON-LD形式でkey-valuesとしてsystem_alertsの例を示します。これは、`options=keyValues`を使用した場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "id": "urn:ngsi-ld:system_alerts:id:FNNO:60592292",  
