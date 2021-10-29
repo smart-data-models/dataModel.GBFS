@@ -2,7 +2,7 @@
 =========================  
 [オープンライセンス](https://github.com/smart-data-models//dataModel.GBFS/blob/master/system_information/LICENSE.md)  
 [document generated automatically](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
-グローバルな記述。**システム運用者、システムの所在地、導入年、URL、連絡先、タイムゾーンなどの詳細情報です。規格GBFS2.2による。  
+グローバルな記述。**システムオペレーター、システムの所在地、導入年、URL、連絡先、タイムゾーンなどの詳細情報。規格GBFS2.2による。  
 バージョン: 0.0.1  
 
 ## プロパティのリスト  
@@ -202,7 +202,7 @@ system_information:
   }  
 }  
 ```  
-#### system_information NGSI-v2 正規化例  
+#### system_information NGSI-v2 正規化された例。  
 ここでは、JSON-LD形式のsystem_informationを正規化した例を示します。これは、オプションを使用しない場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
