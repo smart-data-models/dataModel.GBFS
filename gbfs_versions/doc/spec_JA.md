@@ -7,7 +7,7 @@ Entity: gbfs_versions
 
 ## プロパティのリスト  
 
-- `data`: 名前：値のペアの形で応答データ。  - `id`: エンティティのユニークな識別子  - `last_updated`: フィードのデータがPOSIX時間で更新された最後の時間。  - `ttl`: フィードのデータが再び更新されるまでの秒数（常にデータを更新する場合は0）。  - `type`: NGSIエンティティタイプ。gbfs_versionsでなければなりません。  - `version`: フィードが準拠しているGBFSのバージョン番号(バージョニングフレームワークによる)    
+- `data`: 名前：値のペアの形で応答データ。  - `id`: エンティティのユニークな識別子  - `last_updated`: フィードのデータがPOSIX時間で更新された最後の時間。  - `ttl`: フィードのデータが再び更新されるまでの秒数（常にデータを更新する場合は0）。  - `type`: NGSIのエンティティタイプです。gbfs_versionsでなければなりません。  - `version`: フィードが準拠しているGBFSのバージョン番号(バージョニングフレームワークによる)    
 必須項目  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`    
 規格のマッピング [GBFS 2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)  
@@ -172,7 +172,7 @@ gbfs_versions:
 }  
 ```  
 #### gbfs_versions NGSI-LD key-values の例。  
-gbfs_versionsをkey-valuesとしてJSON-LD形式にした例を示します。これは`options=keyValues`を使った場合のNGSI-LDとの互換性があり、個々のエンティティのコンテキストデータを返します。  
+gbfs_versionsをkey-valuesとしてJSON-LD形式にした例を示します。これは、`options=keyValues`を使った場合のNGSI-LDとの互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "id": "urn:ngsi-ld:gbfs_versions:id:BZXQ:05985472",  
