@@ -209,7 +209,7 @@ system_calendar:
 }  
 ```  
 #### system_calendar NGSI-LD 正規化例  
-ここでは、JSON-LD形式のsystem_calendarを正規化した例を示します。これはオプションを使用しない場合のNGSI-LDとの互換性があり、個々のエンティティのコンテキストデータを返します。  
+正規化されたJSON-LD形式のsystem_calendarの例を示します。これはオプションを使用しない場合のNGSI-LDとの互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "id": "urn:ngsi-ld:system_calendar:id:FNNO:60592292",  
