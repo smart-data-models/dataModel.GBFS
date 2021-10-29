@@ -442,7 +442,7 @@ station_status:
 }  
 ```  
 #### station_status NGSI-LD 正規化された例  
-正規化されたJSON-LD形式のstation_statusの例を示します。これはオプションを使用しない場合のNGSI-LDとの互換性があり、個々のエンティティのコンテキストデータを返します。  
+正規化されたJSON-LD形式のstation_statusの例を示します。これは、オプションを使用しない場合のNGSI-LDとの互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "id": "urn:ngsi-ld:station_status:id:FNNO:60592292",  
