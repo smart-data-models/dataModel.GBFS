@@ -170,7 +170,7 @@ system_information:
 </details>    
 ## Beispiel-Nutzlasten  
 #### system_information NGSI-v2 key-values Beispiel  
-Hier ist ein Beispiel für eine system_information im JSON-LD Format als key-values. Dies ist kompatibel mit NGSI-v2, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
+Hier ist ein Beispiel für eine system_information im JSON-LD Format als key-values. Dies ist mit NGSI-v2 kompatibel, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
 ```json  
 {  
   "id": "urn:ngsi-ld:system_information:id:FNNO:60592292",  
