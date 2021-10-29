@@ -137,7 +137,55 @@ free_bike_status:
 ```  
 </details>    
 ## Example payloads    
-Not available the example of a free_bike_status in JSON-LD format as key-values. This is compatible with NGSI-v2 when  using `options=keyValues` and returns the context data of an individual entity.  
+#### free_bike_status NGSI-v2 key-values Example    
+Here is an example of a free_bike_status in JSON-LD format as key-values. This is compatible with NGSI-v2 when  using `options=keyValues` and returns the context data of an individual entity.  
+```json  
+{  
+    "id": "urn:ngsi-ld:free_bike_status:id:ZMAW:94046191",  
+    "type": "free_bike_status",  
+    "last_updated": 1450156464,  
+    "ttl": 864,  
+    "version": "3.0-RC",  
+    "data": {  
+        "bikes": [  
+            {  
+                "bike_id": "bike:001:0023",  
+                "lat": 9.6,  
+                "lon": 18.6,  
+                "is_reserved": true,  
+                "is_disabled": false,  
+                "rental_uris": {  
+                    "android": "urn:ngsi-ld:free_bike_status:android:DDCU:76475938",  
+                    "ios": "urn:ngsi-ld:free_bike_status:ios:OJIQ:89241157",  
+                    "web": "urn:ngsi-ld:free_bike_status:web:XCVS:38778408"  
+                },  
+                "vehicle_type_id": "regular bike",  
+                "last_reported": 1450156464,  
+                "current_range_meters": 864.6,  
+                "station_id": "Madrid puerta del sol",  
+                "pricing_plan_id": "Tourist 1 day"  
+            },  
+            {  
+                "bike_id": "bike:001:0024",  
+                "lat": 9.6,  
+                "lon": 18.6,  
+                "is_reserved": true,  
+                "is_disabled": false,  
+                "rental_uris": {  
+                    "android": "urn:ngsi-ld:free_bike_status:android:DDCU:76475938",  
+                    "ios": "urn:ngsi-ld:free_bike_status:ios:OJIQ:89241157",  
+                    "web": "urn:ngsi-ld:free_bike_status:web:XCVS:38778408"  
+                },  
+                "vehicle_type_id": "regular bike",  
+                "last_reported": 1450156464,  
+                "current_range_meters": 864.6,  
+                "station_id": "Madrid puerta del sol",  
+                "pricing_plan_id": "Tourist 1 day"  
+            }  
+        ]  
+    }  
+}  
+```  
 #### free_bike_status NGSI-v2 normalized Example    
 Here is an example of a free_bike_status in JSON-LD format as normalized. This is compatible with NGSI-v2 when not using options and returns the context data of an individual entity.  
 ```json  
