@@ -171,7 +171,7 @@ geofencing_zones:
 </details>    
 ## ペイロードの例  
 #### geofencing_zones NGSI-v2 key-values の例。  
-JSON-LD形式でkey-valuesにしたgeofencing_zonesの例を示します。これは、`options=keyValues`を使用した場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
+JSON-LD形式でkey-valuesとしてgeofencing_zonesを作成した例です。これは、`options=keyValues`を使用した場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "id": "urn:ngsi-ld:geofencing_zones:id:FNNO:60592292",  
