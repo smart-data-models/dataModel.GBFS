@@ -2,7 +2,7 @@ Entidad: station_information
 ============================  
 [Licencia abierta](https://github.com/smart-data-models//dataModel.GBFS/blob/master/station_information/LICENSE.md)  
 [documento generado automáticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
-Descripción global: **Detalles que incluyen el operador del sistema, la ubicación del sistema, el año de implantación, la URL, la información de contacto y la zona horaria. Según la norma GBFS 2.2**  
+Descripción global: **Detalles que incluyen el operador del sistema, la ubicación del sistema, el año de implementación, la URL, la información de contacto, la zona horaria. Según la norma GBFS 2.2**  
 versión: 0.0.1  
 
 ## Lista de propiedades  
