@@ -442,7 +442,7 @@ station_status:
 }  
 ```  
 #### station_status NGSI-LD normalisiert Beispiel  
-Hier ist ein Beispiel für einen station_status im JSON-LD-Format in normalisierter Form. Dies ist mit NGSI-LD kompatibel, wenn keine Optionen verwendet werden, und liefert die Kontextdaten einer einzelnen Entität.  
+Hier ist ein Beispiel für einen station_status im JSON-LD-Format in normalisierter Form. Dies ist kompatibel mit NGSI-LD, wenn keine Optionen verwendet werden, und liefert die Kontextdaten einer einzelnen Entität.  
 ```json  
 {  
   "id": "urn:ngsi-ld:station_status:id:FNNO:60592292",  
