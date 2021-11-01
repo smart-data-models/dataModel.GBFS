@@ -125,7 +125,7 @@ system_calendar:
 </details>    
 ## ペイロードの例  
 #### system_calendar NGSI-v2 key-values の例。  
-key-valuesとしてJSON-LD形式のsystem_calendarの例を示します。これは`options=keyValues`を使った場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
+key-valuesとしてJSON-LD形式のsystem_calendarの例を示します。これは`options=keyValues`を使うとNGSI-v2と互換性があり、個々のエンティティのコンテキストデータを返すことができます。  
 ```json  
 {  
   "id": "urn:ngsi-ld:system_calendar:id:FNNO:60592292",  
