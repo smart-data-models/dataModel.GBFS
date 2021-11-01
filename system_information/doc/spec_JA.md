@@ -170,7 +170,7 @@ system_information:
 </details>    
 ## ペイロードの例  
 #### system_information NGSI-v2 key-values の例。  
-ここでは、system_informationをkey-valuesとしてJSON-LD形式で記述した例を紹介します。これは、`options=keyValues`を使用した場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
+system_informationをkey-valuesとしてJSON-LD形式で出力した例です。これは`options=keyValues`を使った場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
   "id": "urn:ngsi-ld:system_information:id:FNNO:60592292",  
@@ -202,7 +202,7 @@ system_information:
   }  
 }  
 ```  
-#### system_information NGSI-v2 正規化された例。  
+#### system_information NGSI-v2 正規化例  
 ここでは、JSON-LD形式のsystem_informationを正規化した例を示します。これは、オプションを使用しない場合のNGSI-v2との互換性があり、個々のエンティティのコンテキストデータを返します。  
 ```json  
 {  
