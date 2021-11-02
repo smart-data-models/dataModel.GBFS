@@ -149,9 +149,9 @@ geofencing_zones:
     - type
     - version
   type: object
-  x-derivedFrom: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md
+  x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md
   x-disclaimer: ""
-  x-licenseUrl: https://github.com/smart-data-models/dataModel.GBFS/blob/master/geofencing_zones/LICENSE.md
-  x-modelSchema: https://smart-data-models.github.io/dataModel.GBFS/geofencing_zones/schema.json
-  x-modelTags: GBFS
+  x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/geofencing_zones/LICENSE.md
+  x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/geofencing_zones/schema.json
+  x-model-tags: GBFS
   x-version: 0.0.1
