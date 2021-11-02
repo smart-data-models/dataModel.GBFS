@@ -109,4 +109,9 @@ vehicle_types:
     - type
     - version
   type: object
-  version: 0.0.1
+  x-derivedFrom: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md
+  x-disclaimer: ""
+  x-licenseUrl: https://github.com/smart-data-models/dataModel.GBFS/blob/master/vehicle_types/LICENSE.md
+  x-modelSchema: https://smart-data-models.github.io/dataModel.GBFS/vehicle_types/schema.json
+  x-modelTags: GBFS
+  x-version: 0.0.1
