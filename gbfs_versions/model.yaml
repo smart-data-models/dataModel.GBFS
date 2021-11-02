@@ -93,7 +93,7 @@ gbfs_versions:
     - version
   type: object
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md
-  x-disclaimer: ""
+  x-disclaimer: 'copyleft (c) 2021 Contributors to Smart Data Models Program'
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/gbfs_versions/LICENSE.md
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/gbfs_versions/schema.json
   x-model-tags: GBFS
