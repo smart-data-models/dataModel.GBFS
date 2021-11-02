@@ -4,6 +4,7 @@
   "description": "Details including system operator, system location, year implemented, URL, contact info, time zone. According to the Standard GBFS 2.2",
   "type": "object",
   "modelTags": "GBFS",
+  "derivedFrom": "https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md",
   "$schemaVersion": "0.0.1",
   "title": "Smart Data Models adaptation of GBFS standard data model station_information",
   "properties": {

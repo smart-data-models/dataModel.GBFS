@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://smart-data-models.github.io/dataModel.GBFS/gbfs/schema.json",
   "modelTags": "GBFS",
+  "derivedFrom": "https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md",
   "$schemaVersion": "0.0.1",
   "title": "Smart Data Models adaptation of GBFS standard data model gbfs",
   "description": "Auto-discovery file that links to all of the other files published by the system. According to the Standard GBFS 2.2",

@@ -4,6 +4,7 @@
   "description": "Describes the system hours of operation. According to the Standard GBFS 2.2",
   "type": "object",
   "modelTags": "GBFS",
+  "derivedFrom": "https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md",
   "$schemaVersion": "0.0.1",
   "title": "Smart Data Models adaptation of GBFS standard data model system_hours",
   "properties": {

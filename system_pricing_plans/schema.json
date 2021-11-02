@@ -5,6 +5,7 @@
   "type": "object",
   "$schemaVersion": "0.0.1",
   "modelTags": "GBFS",
+  "derivedFrom": "https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md",
   "title": "Smart Data Models adaptation of GBFS standard data model system_pricing_plans",
   "properties": {
     "id": {
