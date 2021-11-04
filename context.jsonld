@@ -3,6 +3,7 @@
         "data": "ngsi-ld:data",
         "id": "@id",
         "last_updated": "https://smartdatamodels.org/dataModel.GBFS/last_updated",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
         "ttl": "https://smartdatamodels.org/dataModel.GBFS/ttl",
         "type": "@type",
         "version": "https://smartdatamodels.org/dataModel.GBFS/version"
