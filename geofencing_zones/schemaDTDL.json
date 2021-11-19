@@ -1,0 +1,78 @@
+{
+    "@id": "dtmi:com:ngsi-ld:geofencing_zones;0",
+    "@type": "Interface",
+    "@context": "dtmi:dtdl:context;2",
+    "comment": "Smart Data Models adaptation of GBFS standard data model geofencing_zones adapted to DTDL from smartdatamodels.org. Source: https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/geofencing_zones/schema.json",
+    "description": "Describes geofencing zones and their associated rules and attributes (added in v2.1-RC). According to the Standard GBFS 2.2",
+    "displayName": "geofencing_zones",
+    "contents": [
+        {
+            "name": "last_updated",
+            "writable": true,
+            "displayName": "last_updated",
+            "@type": "Property",
+            "schema": "integer",
+            "comment": "Last time the data in the feed was updated in POSIX time."
+        },
+        {
+            "name": "ttl",
+            "writable": true,
+            "displayName": "ttl",
+            "@type": "Property",
+            "schema": "integer",
+            "comment": "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed)."
+        },
+        {
+            "@type": "object",
+            "name": "data",
+            "comment": "Array that contains geofencing information for the system.",
+            "displayName": "data",
+            "fields": [
+                {
+                    "name": "geofencing_zones",
+                    "schema": "object"
+                }
+            ]
+        },
+        {
+            "@type": "Telemetry",
+            "name": "version",
+            "schema": {
+                "@type": "Enum",
+                "valueSchema": "string",
+                "enumValues": [
+                    {
+                        "name": "2.1-RC",
+                        "displayName": "2.1-RC",
+                        "enumValue": 1
+                    },
+                    {
+                        "name": "2.1-RC2",
+                        "displayName": "2.1-RC2",
+                        "enumValue": 2
+                    },
+                    {
+                        "name": 2.1,
+                        "displayName": 2.1,
+                        "enumValue": 3
+                    },
+                    {
+                        "name": 2.2,
+                        "displayName": 2.2,
+                        "enumValue": 4
+                    },
+                    {
+                        "name": "3.0-RC",
+                        "displayName": "3.0-RC",
+                        "enumValue": 5
+                    },
+                    {
+                        "name": 3.0,
+                        "displayName": 3.0,
+                        "enumValue": 6
+                    }
+                ]
+            }
+        }
+    ]
+}
