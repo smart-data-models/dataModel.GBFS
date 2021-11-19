@@ -1,0 +1,68 @@
+{
+    "@id": "dtmi:com:ngsi-ld:station_status;0",
+    "@type": "Interface",
+    "@context": "dtmi:dtdl:context;2",
+    "comment": "Smart Data Models adaptation of GBFS standard data model station_status adapted to DTDL from smartdatamodels.org. Source: https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/station_status/schema.json",
+    "description": "Describes the capacity and rental availability of the station According to the Standard GBFS 2.2",
+    "displayName": "station_status",
+    "contents": [
+        {
+            "name": "last_updated",
+            "writable": true,
+            "displayName": "last_updated",
+            "@type": "Property",
+            "schema": "integer",
+            "comment": "Last time the data in the feed was updated in POSIX time."
+        },
+        {
+            "name": "ttl",
+            "writable": true,
+            "displayName": "ttl",
+            "@type": "Property",
+            "schema": "integer",
+            "comment": "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed)."
+        },
+        {
+            "@type": "object",
+            "name": "data",
+            "comment": "Array that contains one object per station as defined below.",
+            "displayName": "data",
+            "fields": [
+                {
+                    "name": "stations",
+                    "schema": "array"
+                }
+            ]
+        },
+        {
+            "@type": "Telemetry",
+            "name": "version",
+            "schema": {
+                "@type": "Enum",
+                "valueSchema": "string",
+                "enumValues": [
+                    {
+                        "name": "2.1-RC2",
+                        "displayName": "2.1-RC2",
+                        "enumValue": 1
+                    },
+                    {
+                        "name": 2.1,
+                        "displayName": 2.1,
+                        "enumValue": 2
+                    },
+                    {
+                        "name": 2.2,
+                        "displayName": 2.2,
+                        "enumValue": 3
+                    },
+                    {
+                        "name": 3.0,
+                        "displayName": 3.0,
+                        "enumValue": 4
+                    }
+                ]
+            }
+        }
+    ]
+}
