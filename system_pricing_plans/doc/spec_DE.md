@@ -351,3 +351,4 @@ system_pricing_plans:
   ]  
 }  
 ```  
+Siehe [FAQ 10](https://smartdatamodels.org/index.php/faqs/), um eine Antwort auf die Frage zu erhalten, wie man mit Größeneinheiten umgeht
