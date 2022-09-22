@@ -1,184 +1,184 @@
-description: This is a compilation list of all CONTRIBUTORS across different objects (data models) alphabetically ordered of the subject dataModel.GBFS. All fields are  non mandatory. This list is provisional and it could be extended when more information is available. 
+description: This is a compilation list of all CONTRIBUTORS across different objects (data models) alphabetically ordered of the subject dataModel.GBFS. All fields are  non mandatory. This list is provisional and it could be extended when more information is available.
 contributors:
--
-  name: contra
-  surname:
+- name: contra
+  surname: 
   mail: yo@contra.io
-  organization: "@staeco"
-  project:
+  organization: '@staeco'
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Daniel
-  surname:
-  mail:
-  organization:
-  project:
+  year: 2022
+- name: Daniel
+  surname: 
+  mail: 
+  organization: 
+  project: 
   comments: original contributor of GBFS standard
--
-  name: DaveVSDave
-  surname:
-  mail:
+  year: 2022
+- name: DaveVSDave
+  surname: 
+  mail: 
   organization: davevsdave
-  project:
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Jerry
-  surname:
-  mail:
-  organization:
-  project:
+  year: 2022
+- name: Jerry
+  surname: 
+  mail: 
+  organization: 
+  project: 
   comments: original contributor of GBFS standard
--
-  name: heidiguenin
-  surname:
-  mail:
-  organization: "@trilliumtransit @MobilityData"
-  project:
+  year: 2022
+- name: heidiguenin
+  surname: 
+  mail: 
+  organization: '@trilliumtransit @MobilityData'
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Aaron
+  year: 2022
+- name: Aaron
   surname: Antrim
   mail: aaron@trilliumtransit.com
   organization: Trillium @trilliumtransit
-  project:
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Sean
+  year: 2022
+- name: Sean
   surname: Barbeau
-  mail:
-  organization: "@CUTR-at-USF"
-  project:
+  mail: 
+  organization: '@CUTR-at-USF'
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Hassene
+  year: 2022
+- name: Hassene
   surname: Ben Salem
-  mail:
+  mail: 
   organization: qucit
-  project:
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Sven
+  year: 2022
+- name: Sven
   surname: Boor
-  mail:
-  organization:
-  project:
+  mail: 
+  organization: 
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Peter
+  year: 2022
+- name: Peter
   surname: C
-  mail:
-  organization:
-  project:
+  mail: 
+  organization: 
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Jesse
+  year: 2022
+- name: Jesse
   surname: Chan-Norris
-  mail:
-  organization:
-  project:
+  mail: 
+  organization: 
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Benoit
+  year: 2022
+- name: Benoit
   surname: Deldicque
-  mail:
-  organization:
-  project:
+  mail: 
+  organization: 
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Marc-Andre
+  year: 2022
+- name: Marc-Andre
   surname: Dupras
-  mail:
-  organization:
-  project:
+  mail: 
+  organization: 
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Andrew
+  year: 2022
+- name: Andrew
   surname: Fischer
-  mail:
-  organization: "@newsdev at @nytimes"
-  project:
+  mail: 
+  organization: '@newsdev at @nytimes'
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Frank
+  year: 2022
+- name: Frank
   surname: Hebbert
-  mail:
+  mail: 
   organization: Lyft
-  project:
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Alex
+  year: 2022
+- name: Alex
   surname: Hill
-  mail:
-  organization:
-  project:
+  mail: 
+  organization: 
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Chartsiri
+  year: 2022
+- name: Chartsiri
   surname: Jirachotkulthorn
-  mail:
-  organization:
-  project:
+  mail: 
+  organization: 
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Nick
+  year: 2022
+- name: Nick
   surname: Lucius
-  mail:
+  mail: 
   organization: City of @Chicago
-  project:
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Brooke
+  year: 2022
+- name: Brooke
   surname: McKim
   mail: 
   organization: 
   project: 
   comments: original contributor of GBFS standard
--
-  name: Cyrille
+  year: 2022
+- name: Cyrille
   surname: Medard de Chardon
   mail: 
   organization: LISER
   project: 
   comments: original contributor of GBFS standard
--
-  name: Colin
+  year: 2022
+- name: Colin
   surname: McGlynn
   mail: 
   organization: TransitScreen
   project: 
   comments: original contributor of GBFS standard
--
-  name: Kostiantyn
+  year: 2022
+- name: Kostiantyn
   surname: Plakhotia
   mail: 
   organization: Equal Entry LLC
   project: 
   comments: original contributor of GBFS standard
--
-  name: Marcin
+  year: 2022
+- name: Marcin
   surname: Pyla
-  mail:
+  mail: 
   organization: Leftbrain
-  project:
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Josee
+  year: 2022
+- name: Josee
   surname: Sabourin
-  mail:
+  mail: 
   organization: MobilityData IO
-  project:
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Evan
+  year: 2022
+- name: Evan
   surname: Siroky
   mail: evan.siroky@yahoo.com
-  organization: "@ibi-group"
-  project:
+  organization: '@ibi-group'
+  project: 
   comments: original contributor of GBFS standard
--
-  name: Mitch
+  year: 2022
+- name: Mitch
   surname: Vars
-  mail:
+  mail: 
   organization: Mobility Data IO
-  project:
+  project: 
   comments: original contributor of GBFS standard
+  year: 2022
