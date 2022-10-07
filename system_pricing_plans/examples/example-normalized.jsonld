@@ -1,48 +1,49 @@
 {
-  "id": "urn:ngsi-ld:system_pricing_plans:id:FNNO:60592292",
-  "type": "system_pricing_plans",
-  "last_updated": {
-    "type": "Property",
-    "value": 1609866247
-  },
-  "ttl": {
-    "type": "Property",
-    "value": 0
-  },
-  "version": {
-    "type": "Property",
-    "value": "3.0"
-  },
-  "data": {
-    "type": "Property",
-    "value": {
-      "plans": [
-        {
-          "plan_id": "plan3",
-          "name": "Simple Rate",
-          "currency": "CAD",
-          "price": 3,
-          "is_taxable": true,
-          "description": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
-          "per_km_pricing": [
-            {
-              "start": 0,
-              "rate": 0.25,
-              "interval": 1
-            }
-          ],
-          "per_min_pricing": [
-            {
-              "start": 0,
-              "rate": 0.50,
-              "interval": 1
-            }
-          ]
+    "id": "urn:ngsi-ld:system_pricing_plans:id:FNNO:60592292",
+    "type": "system_pricing_plans",
+    "last_updated": {
+        "type": "Property",
+        "value": 1609866247
+    },
+    "ttl": {
+        "type": "Property",
+        "value": 0
+    },
+    "version": {
+        "type": "Property",
+        "value": "3.0"
+    },
+    "data": {
+        "type": "Property",
+        "value": {
+            "plans": [
+                {
+                    "plan_id": "plan3",
+                    "name": "Simple Rate",
+                    "currency": "CAD",
+                    "price": 3,
+                    "is_taxable": true,
+                    "description": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
+                    "per_km_pricing": [
+                        {
+                            "start": 0,
+                            "rate": 0.25,
+                            "interval": 1
+                        }
+                    ],
+                    "per_min_pricing": [
+                        {
+                            "start": 0,
+                            "rate": 0.5,
+                            "interval": 1
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  },
-  "@context": [
-    "https://smartdatamodels.org/context.jsonld"
-  ]
+    },
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/context.jsonld"
+    ]
 }
