@@ -1,70 +1,71 @@
 {
-  "id": "urn:ngsi-ld:vehicle_types:id:FNNO:60592292",
-  "type": "vehicle_types",
-  "last_updated": 1609866247,
-  "ttl": 0,
-  "version": "3.0",
-  "data": {
-    "vehicle_types": [
-      {
-        "vehicle_type_id": "abc123",
-        "form_factor": "bicycle",
-        "propulsion_type": "human",
-        "name": "Example Basic Bike",
-        "default_reserve_time": 30,
-        "return_type": [
-          "any_station",
-          "free_floating"
-        ],
-        "vehicle_assets": {
-          "icon_url": "https://www.example.com/assets/icon_bicycle.svg",
-          "icon_url_dark": "https://www.example.com/assets/icon_bicycle_dark.svg",
-          "icon_last_modified": "2021-06-15"
-        },
-        "default_pricing_plan_id": "bike_plan_1",
-        "pricing_plan_ids": [
-          "bike_plan_1",
-          "bike_plan_2",
-          "bike_plan_3"
+    "id": "urn:ngsi-ld:vehicle_types:id:FNNO:60592292",
+    "type": "vehicle_types",
+    "last_updated": 1609866247,
+    "ttl": 0,
+    "version": "3.0",
+    "data": {
+        "vehicle_types": [
+            {
+                "vehicle_type_id": "abc123",
+                "form_factor": "bicycle",
+                "propulsion_type": "human",
+                "name": "Example Basic Bike",
+                "default_reserve_time": 30,
+                "return_type": [
+                    "any_station",
+                    "free_floating"
+                ],
+                "vehicle_assets": {
+                    "icon_url": "https://www.example.com/assets/icon_bicycle.svg",
+                    "icon_url_dark": "https://www.example.com/assets/icon_bicycle_dark.svg",
+                    "icon_last_modified": "2021-06-15"
+                },
+                "default_pricing_plan_id": "bike_plan_1",
+                "pricing_plan_ids": [
+                    "bike_plan_1",
+                    "bike_plan_2",
+                    "bike_plan_3"
+                ]
+            },
+            {
+                "vehicle_type_id": "def456",
+                "form_factor": "scooter",
+                "propulsion_type": "electric",
+                "name": "Example E-scooter V2",
+                "default_reserve_time": 30,
+                "max_range_meters": 12345,
+                "return_type": [
+                    "free_floating"
+                ],
+                "vehicle_assets": {
+                    "icon_url": "https://www.example.com/assets/icon_escooter.svg",
+                    "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
+                    "icon_last_modified": "2021-06-15"
+                },
+                "default_pricing_plan_id": "scooter_plan_1"
+            },
+            {
+                "vehicle_type_id": "car1",
+                "form_factor": "car",
+                "propulsion_type": "combustion",
+                "name": "Four-door Sedan",
+                "default_reserve_time": 0,
+                "max_range_meters": 523992,
+                "return_type": [
+                    "roundtrip_station"
+                ],
+                "vehicle_assets": {
+                    "icon_url": "https://www.example.com/assets/icon_car.svg",
+                    "icon_url_dark": "https://www.example.com/assets/icon_car_dark.svg",
+                    "icon_last_modified": "2021-06-15"
+                },
+                "default_pricing_plan_id": "car_plan_1"
+            }
         ]
-      },
-      {
-        "vehicle_type_id": "def456",
-        "form_factor": "scooter",
-        "propulsion_type": "electric",
-        "name": "Example E-scooter V2",
-        "default_reserve_time": 30,
-        "max_range_meters": 12345,
-        "return_type": [
-          "free_floating"
-        ],
-        "vehicle_assets": {
-          "icon_url": "https://www.example.com/assets/icon_escooter.svg",
-          "icon_url_dark": "https://www.example.com/assets/icon_escooter_dark.svg",
-          "icon_last_modified": "2021-06-15"
-        },
-        "default_pricing_plan_id": "scooter_plan_1"
-      },
-      {
-        "vehicle_type_id": "car1",
-        "form_factor": "car",
-        "propulsion_type": "combustion",
-        "name": "Four-door Sedan",
-        "default_reserve_time": 0,
-        "max_range_meters": 523992,
-        "return_type": [
-          "roundtrip_station"
-        ],
-        "vehicle_assets": {
-          "icon_url": "https://www.example.com/assets/icon_car.svg",
-          "icon_url_dark": "https://www.example.com/assets/icon_car_dark.svg",
-          "icon_last_modified": "2021-06-15"
-        },
-        "default_pricing_plan_id": "car_plan_1"
-      }
+    },
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/context.jsonld"
     ]
-  },
-  "@context": [
-    "https://smartdatamodels.org/context.jsonld"
-  ]
 }
