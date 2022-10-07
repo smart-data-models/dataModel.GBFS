@@ -1,22 +1,23 @@
 {
-  "id": "urn:ngsi-ld:system_calendar:id:FNNO:60592292",
-  "type": "system_calendar",
-  "last_updated": 1604333830,
-  "ttl": 86400,
-  "version": "3.0",
-  "data": {
-    "calendars": [
-      {
-        "start_month": 4,
-        "start_day": 1,
-        "start_year": 2020,
-        "end_month": 11,
-        "end_day": 5,
-        "end_year": 2020
-      }
+    "id": "urn:ngsi-ld:system_calendar:id:FNNO:60592292",
+    "type": "system_calendar",
+    "last_updated": 1604333830,
+    "ttl": 86400,
+    "version": "3.0",
+    "data": {
+        "calendars": [
+            {
+                "start_month": 4,
+                "start_day": 1,
+                "start_year": 2020,
+                "end_month": 11,
+                "end_day": 5,
+                "end_year": 2020
+            }
+        ]
+    },
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/context.jsonld"
     ]
-  },
-  "@context": [
-    "https://smartdatamodels.org/context.jsonld"
-  ]
 }
