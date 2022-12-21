@@ -1,0 +1,3 @@
+/* (Beta) Export of data model vehicle_types of the subject dataModel.GBFS for a postgreSQL database. Pending translation of enumerations and multityped attributes */
+CREATE TYPE vehicle_types_type AS ENUM ('vehicle_types');CREATE TYPE version_type AS ENUM ('2.1-RC', 2.1, 2.2, '3.0-RC', 3.0);
+CREATE TABLE vehicle_types (data json, id text, last_updated integer, ttl integer, type vehicle_types_type, version version_type);
