@@ -1,14 +1,14 @@
 geofencing_zones:
-  description: 'Describes geofencing zones and their associated rules and attributes (added in v2.1-RC). According to the Standard GBFS 2.2'
+  description: Describes geofencing zones and their associated rules and attributes (added in v2.1-RC). According to the Standard GBFS 2.2
   properties:
     data:
-      description: 'Array that contains geofencing information for the system.'
+      description: Array that contains geofencing information for the system.
       properties:
         geofencing_zones:
-          description: 'Each geofenced zone and its associated rules and attributes is described as an object within the array of features.'
+          description: Each geofenced zone and its associated rules and attributes is described as an object within the array of features.
           properties:
             features:
-              description: 'Array of objects.'
+              description: Array of objects.
               items:
                 properties:
                   geometry:
@@ -33,20 +33,20 @@ geofencing_zones:
                     required:
                       - type
                       - coordinates
-                    title: 'GeoJSON MultiPolygon'
+                    title: GeoJSON MultiPolygon
                     type: object
                   properties:
-                    description: 'Describing travel allowances and limitations.'
+                    description: Describing travel allowances and limitations.
                     properties:
                       end:
-                        description: 'End time of the geofencing zone in POSIX time.'
+                        description: End time of the geofencing zone in POSIX time.
                         minimum: 1450155600
                         type: number
                       name:
-                        description: 'Public name of the geofencing zone.'
+                        description: Public name of the geofencing zone.
                         type: string
                       rules:
-                        description: 'Array that contains one object per rule.'
+                        description: Array that contains one object per rule.
                         items:
                           properties:
                             maximum_speed_kph:
@@ -60,7 +60,7 @@ geofencing_zones:
                               description: 'Is the ride allowed to travel through this zone?'
                               type: boolean
                             vehicle_type_id:
-                              description: 'Array of vehicle type IDs for which these restrictions apply.'
+                              description: Array of vehicle type IDs for which these restrictions apply.
                               items:
                                 type: string
                               type: array
@@ -70,7 +70,7 @@ geofencing_zones:
                           type: object
                         type: array
                       start:
-                        description: 'Start time of the geofencing zone in POSIX time.'
+                        description: Start time of the geofencing zone in POSIX time.
                         minimum: 1450155600
                         type: number
                     type: object
@@ -82,11 +82,11 @@ geofencing_zones:
                   - type
                   - geometry
                   - properties
-                title: 'GeoJSON Feature'
+                title: GeoJSON Feature
                 type: object
               type: array
             type:
-              description: 'FeatureCollection as per IETF RFC 7946.'
+              description: FeatureCollection as per IETF RFC 7946.
               enum:
                 - FeatureCollection
               type: string
@@ -99,31 +99,31 @@ geofencing_zones:
         type: Property
     id:
       anyOf:
-        - description: 'Property. Identifier format of any NGSI entity'
+        - description: Property. Identifier format of any NGSI entity
           maxLength: 256
           minLength: 1
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$
           type: string
-        - description: 'Property. Identifier format of any NGSI entity'
+        - description: Property. Identifier format of any NGSI entity
           format: uri
           type: string
-      description: 'Unique identifier of the entity'
+      description: Unique identifier of the entity
       x-ngsi:
         type: Property
     last_updated:
-      description: 'Last time the data in the feed was updated in POSIX time.'
+      description: Last time the data in the feed was updated in POSIX time.
       minimum: 1450155600
-      type: integer
+      type: number
       x-ngsi:
         type: Property
     ttl:
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).
       minimum: 0
-      type: integer
+      type: number
       x-ngsi:
         type: Property
     type:
-      description: 'NGSI entity type. It has to be geofencing_zones'
+      description: NGSI entity type. It has to be geofencing_zones
       enum:
         - geofencing_zones
       type: string
@@ -150,7 +150,7 @@ geofencing_zones:
     - version
   type: object
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/geofencing_zones/LICENSE.md
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/geofencing_zones/schema.json
   x-model-tags: GBFS
