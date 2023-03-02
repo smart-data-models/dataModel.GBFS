@@ -1,11 +1,24 @@
 {
     "@context": {
         "data": "ngsi-ld:data",
+        "free_bike_status": "https://smartdatamodels.org/dataModel.GBFS/free_bike_status",
+        "gbfs": "https://smartdatamodels.org/dataModel.GBFS/gbfs",
+        "gbfs_versions": "https://smartdatamodels.org/dataModel.GBFS/gbfs_versions",
+        "geofencing_zones": "https://smartdatamodels.org/dataModel.GBFS/geofencing_zones",
         "id": "@id",
         "last_updated": "https://smartdatamodels.org/dataModel.GBFS/last_updated",
         "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "station_information": "https://smartdatamodels.org/dataModel.GBFS/station_information",
+        "station_status": "https://smartdatamodels.org/dataModel.GBFS/station_status",
+        "system_alerts": "https://smartdatamodels.org/dataModel.GBFS/system_alerts",
+        "system_calendar": "https://smartdatamodels.org/dataModel.GBFS/system_calendar",
+        "system_hours": "https://smartdatamodels.org/dataModel.GBFS/system_hours",
+        "system_information": "https://smartdatamodels.org/dataModel.GBFS/system_information",
+        "system_pricing_plans": "https://smartdatamodels.org/dataModel.GBFS/system_pricing_plans",
+        "system_regions": "https://smartdatamodels.org/dataModel.GBFS/system_regions",
         "ttl": "https://smartdatamodels.org/dataModel.GBFS/ttl",
         "type": "@type",
+        "vehicle_types": "https://smartdatamodels.org/dataModel.GBFS/vehicle_types",
         "version": "https://smartdatamodels.org/dataModel.GBFS/version"
     }
 }
