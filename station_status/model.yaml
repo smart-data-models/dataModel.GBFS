@@ -1,61 +1,44 @@
 station_status:
-
   description: Describes the capacity and rental availability of the station According to the Standard GBFS 2.2
-
   properties:
-
     data:
-
       description: Array that contains one object per station as defined below.
-
       properties:
         stations:
-
           items:
-
             properties:
-
               is_installed:
-                description: Is the station currently on the street?
+                description: 'Is the station currently on the street?'
                 type: boolean
-
               is_renting:
-                description: Is the station currently renting vehicles?
+                description: 'Is the station currently renting vehicles?'
                 type: boolean
-
               is_returning:
-                description: Is the station accepting vehicle returns?
+                description: 'Is the station accepting vehicle returns?'
                 type: boolean
-
               last_reported:
                 description: The last time this station reported its status to the operator's backend in POSIX time.
                 minimum: 1450155600
                 type: number
-
               num_bikes_available:
                 description: Number of vehicles of any type physically available for rental at the station.
                 minimum: 0
                 type: number
-
               num_bikes_disabled:
                 description: Number of disabled vehicles of any type at the station.
                 minimum: 0
                 type: number
-
               num_docks_available:
                 description: Number of functional docks physically at the station.
                 minimum: 0
                 type: number
-
               num_docks_disabled:
                 description: Number of empty but disabled docks at the station.
                 minimum: 0
                 type: number
-
               station_id:
                 description: Identifier of a station.
                 type: string
-
               vehicle_docks_available:
                 dependencies:
                   vehicle_docks_available:
@@ -75,7 +58,6 @@ station_status:
                       type: array
                   type: object
                 type: array
-
               vehicles:
                 description: Array of objects containing data about a specific vehicle that is present at the docking station (added in v2.1-RC).
                 items:
@@ -88,10 +70,10 @@ station_status:
                       minimum: 0
                       type: number
                     is_disabled:
-                      description: Is the vehicle currently disabled (broken)? (added in v2.1-RC)
+                      description: 'Is the vehicle currently disabled (broken)? (added in v2.1-RC)'
                       type: boolean
                     is_reserved:
-                      description: Is the vehicle currently reserved for someone else? (added in v2.1-RC)
+                      description: 'Is the vehicle currently reserved for someone else? (added in v2.1-RC)'
                       type: boolean
                     vehicle_type_id:
                       description: The vehicle_type_id of this vehicle as described in vehicle_types.json (added in v2.1-RC).
@@ -103,7 +85,6 @@ station_status:
                   - is_disabled
                   - vehicle_type_id
                 type: array
-
               vehicles_types_available:
                 description: Array of objects displaying the total number of each vehicle type at the station (added in v2.1-RC).
                 items:
@@ -117,9 +98,7 @@ station_status:
                       type: string
                   type: object
                 type: array
-
             type: object
-
           required:
             - station_id
             - num_bikes_available
@@ -127,17 +106,12 @@ station_status:
             - is_renting
             - is_returning
             - last_reported
-
           type: array
-
       required:
         - stations
-
       type: object
-
       x-ngsi:
         type: Property
-
     id:
       anyOf:
         - description: Identifier format of any NGSI entity
@@ -155,21 +129,18 @@ station_status:
       description: Unique identifier of the entity
       x-ngsi:
         type: Property
-
     last_updated:
       description: Last time the data in the feed was updated in POSIX time.
       minimum: 1450155600
       type: integer
       x-ngsi:
         type: Property
-
     ttl:
       description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).
       minimum: 0
       type: integer
       x-ngsi:
         type: Property
-
     type:
       description: NGSI entity type. It has to be station_status
       enum:
@@ -177,18 +148,16 @@ station_status:
       type: string
       x-ngsi:
         type: Property
-
     version:
-      description: GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).
+      description: 'GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).'
       enum:
         - 2.1-RC2
-        - '2.1'
-        - '2.2'
-        - '3.0'
+        - 2.1
+        - 2.2
+        - 3.0
       type: string
       x-ngsi:
         type: Property
-
   required:
     - data
     - id
@@ -196,17 +165,10 @@ station_status:
     - ttl
     - type
     - version
-
   type: object
-
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md
-
-  x-disclaimer: Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program
-
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/station_status/LICENSE.md
-
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/station_status/schema.json
-
   x-model-tags: GBFS
-
   x-version: 0.0.1
