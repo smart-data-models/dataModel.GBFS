@@ -1,21 +1,22 @@
 <!-- 10-Header -->  
 [![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)  
-实体: 系统_小时  
-=========<!-- /10-Header -->  
+实体：系统小时  
+=======<!-- /10-Header -->  
 <!-- 15-License -->  
 [开放许可](https://github.com/smart-data-models//dataModel.GBFS/blob/master/system_hours/LICENSE.md)  
 [文件自动生成](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
-全局描述。**描述了系统的工作时间。根据标准GBFS 2.2**的规定  
-版本：0.0.1  
+全局描述：**描述系统运行时间。根据 GBFS 2.2 标准**  
+版本： 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
-##属性列表  
+## 属性列表  
 
-<sup><sub>[*] 如果一个属性中没有一个类型，是因为它可能有几种类型或不同的格式/模式</sub></sup>。  
-- `data[object]`: 包含系统运行时间的数组。  - `id[*]`: 实体的唯一标识符  - `last_updated[integer]`: 饲料中的数据最后一次在POSIX时间内被更新。  - `ttl[integer]`: 饲料中的数据将被再次更新之前的秒数（如果数据应始终被刷新，则为0）。  - `type[string]`: NGSI实体类型。它必须是system_hours  - `version[string]`: 根据版本框架，饲料符合的GBFS版本号（在v1.1版中添加）。  <!-- /30-PropertiesList -->  
+<sup><sub>[*] 如果属性中没有类型，是因为它可能有多个类型或不同的格式/模式</sub></sup>。  
+- `data[object]`: 包含系统运行小时数的数组。  	  
+- `id[*]`: 实体的唯一标识符  - `last_updated[integer]`: 在 POSIX 时间内，Feed 中数据的最后一次更新时间。  - `ttl[integer]`: 数据源中的数据再次更新前的秒数（如果数据应始终刷新，则为 0）。  - `type[string]`: NGSI 实体类型。必须是 system_hours  - `version[string]`: 根据版本框架（在版本 1.1 中添加），馈送符合的 GBFS 版本号。  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 所需属性  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
@@ -23,23 +24,23 @@
 标准的映射[GBFS 2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
-## 数据模型的属性描述  
-按字母顺序排列（点击查看详情）。  
+## 属性的数据模型描述  
+按字母顺序排列（点击查看详情）  
 <!-- /50-DataModelHeader -->  
 <!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 system_hours:    
-  description: 'Describes the system hours of operation. According to the Standard GBFS 2.2'    
+  description: Describes the system hours of operation. According to the Standard GBFS 2.2    
   properties:    
     data:    
-      description: 'Array that contains system hours of operations.'    
+      description: Array that contains system hours of operations.    
       properties:    
         rental_hours:    
           items:    
             properties:    
               days:    
-                description: 'An array of abbreviations (first 3 letters) of English names of the days of the week for which this object applies.'    
+                description: An array of abbreviations (first 3 letters) of English names of the days of the week for which this object applies.    
                 items:    
                   enum:    
                     - sun    
@@ -54,15 +55,15 @@ system_hours:
                 minItems: 1    
                 type: array    
               end_time:    
-                description: 'End time for the hours of operation of the system.'    
+                description: End time for the hours of operation of the system.    
                 pattern: ^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$    
                 type: string    
               start_time:    
-                description: 'Start time for the hours of operation of the system.'    
+                description: Start time for the hours of operation of the system.    
                 pattern: ^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$    
                 type: string    
               user_types:    
-                description: 'Array of member and nonmember value(s) indicating that this set of rental hours applies to either members or non-members only.'    
+                description: Array of member and nonmember value(s) indicating that this set of rental hours applies to either members or non-members only.    
                 items:    
                   enum:    
                     - member    
@@ -85,31 +86,35 @@ system_hours:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be system_hours'    
+      description: NGSI entity type. It has to be system_hours    
       enum:    
         - system_hours    
       type: string    
@@ -140,7 +145,7 @@ system_hours:
     - version    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/system_hours/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/system_hours/schema.json    
   x-model-tags: GBFS    
@@ -151,9 +156,9 @@ system_hours:
 <!-- 70-MiddleNotes -->  
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
-## ＃＃＃＃有效载荷的例子  
-#### system_hours NGSI-v2 key-values 示例  
-下面是一个以JSON-LD格式作为key-values的system_hours的例子。当使用`options=keyValues`时，这与NGSI-v2兼容，并返回单个实体的上下文数据。  
+## 有效载荷示例  
+#### system_hours NGSI-v2 关键值 示例  
+下面是一个以 JSON-LD 格式作为键值的 system_hours 示例。当使用 `options=keyValues` 时，这与 NGSI-v2 兼容，并返回单个实体的上下文数据。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -206,8 +211,8 @@ system_hours:
 }  
 ```  
 </details>  
-#### system_hours NGSI-v2 normalized Example  
-下面是一个规范化的JSON-LD格式的system_hours的例子。当不使用选项时，这与NGSI-v2兼容，并返回单个实体的上下文数据。  
+#### system_hours NGSI-v2 归一化示例  
+下面是一个规范化 JSON-LD 格式的 system_hours 示例。在不使用选项的情况下，它与 NGSI-v2 兼容，并返回单个实体的上下文数据。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -272,8 +277,8 @@ system_hours:
 }  
 ```  
 </details>  
-#### system_hours NGSI-LD key-values 示例  
-下面是一个以JSON-LD格式作为key-values的system_hours的例子。当使用`options=keyValues`时，这与NGSI-LD兼容，并返回单个实体的上下文数据。  
+#### system_hours NGSI-LD 关键值 示例  
+下面是一个以 JSON-LD 格式作为键值的 system_hours 示例。当使用 `options=keyValues` 时，这与 NGSI-LD 兼容，并返回单个实体的上下文数据。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -331,7 +336,7 @@ system_hours:
 ```  
 </details>  
 #### system_hours NGSI-LD 归一化示例  
-下面是一个规范化的JSON-LD格式的system_hours的例子。当不使用选项时，这与NGSI-LD兼容，并返回单个实体的上下文数据。  
+下面是一个规范化 JSON-LD 格式的 system_hours 示例。在不使用选项时，它与 NGSI-LD 兼容，并返回单个实体的上下文数据。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -403,7 +408,7 @@ system_hours:
 <!-- 90-FooterNotes -->  
 <!-- /90-FooterNotes -->  
 <!-- 95-Units -->  
-参见[常见问题10](https://smartdatamodels.org/index.php/faqs/)，以获得关于如何处理量级单位的答案。  
+请参阅 [FAQ 10](https://smartdatamodels.org/index.php/faqs/)，获取如何处理幅度单位的答案。  
 <!-- /95-Units -->  
 <!-- 97-LastFooter -->  
 ---  
