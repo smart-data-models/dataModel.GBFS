@@ -15,7 +15,8 @@
 ## Elenco delle proprietà  
 
 <sup><sub>[*] Se non c'è un tipo in un attributo è perché potrebbe avere diversi tipi o diversi formati/modelli</sub></sup>.  
-- `data[object]`: Dati globali sulle regioni  - `id[*]`: Identificatore univoco dell'entità  - `last_updated[integer]`: Ultima volta che i dati del feed sono stati aggiornati in tempo POSIX.  - `ttl[integer]`: Numero di secondi prima che i dati del feed vengano nuovamente aggiornati (0 se i dati devono essere sempre aggiornati).  - `type[string]`: Tipo di entità NGSI. Deve essere system_regions  - `version[string]`: Numero di versione di GBFS a cui il feed è conforme, secondo il framework di versioning (aggiunto nella v1.1).  <!-- /30-PropertiesList -->  
+- `data[object]`: Dati globali sulle regioni  	  
+- `id[*]`: Identificatore univoco dell'entità  - `last_updated[integer]`: Ultima volta che i dati del feed sono stati aggiornati in tempo POSIX.  - `ttl[integer]`: Numero di secondi prima che i dati del feed vengano nuovamente aggiornati (0 se i dati devono essere sempre aggiornati).  - `type[string]`: Tipo di entità NGSI. Deve essere system_regions  - `version[string]`: Numero di versione di GBFS a cui il feed è conforme, secondo il framework di versioning (aggiunto nella v1.1).  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Proprietà richieste  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
@@ -30,20 +31,20 @@
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 system_regions:    
-  description: 'Describes regions for a system that is broken up by geographic or political region. According to the Standard GBFS 2.2'    
+  description: Describes regions for a system that is broken up by geographic or political region. According to the Standard GBFS 2.2    
   properties:    
     data:    
-      description: 'Global data about the regions'    
+      description: Global data about the regions    
       properties:    
         regions:    
-          description: 'Array of regions.'    
+          description: Array of regions.    
           items:    
             properties:    
               name:    
-                description: 'Public name for this region.'    
+                description: Public name for this region.    
                 type: string    
               region_id:    
-                description: 'identifier of the region.'    
+                description: identifier of the region.    
                 type: string    
             required:    
               - region_id    
@@ -57,31 +58,35 @@ system_regions:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be system_regions'    
+      description: NGSI entity type. It has to be system_regions    
       enum:    
         - system_regions    
       type: string    
@@ -112,7 +117,7 @@ system_regions:
     - version    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/system_regions/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/system_regions/schema.json    
   x-model-tags: GBFS    
@@ -158,7 +163,7 @@ system_regions:
 ```  
 </details>  
 #### system_regions NGSI-v2 normalizzato Esempio  
-Ecco un esempio di system_regions in formato JSON-LD normalizzato. Questo è compatibile con NGSI-v2 quando non si usano le opzioni e restituisce i dati di contesto di una singola entità.  
+Ecco un esempio di system_regions in formato JSON-LD normalizzato. Questo è compatibile con NGSI-v2 quando non si utilizzano le opzioni e restituisce i dati di contesto di una singola entità.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
