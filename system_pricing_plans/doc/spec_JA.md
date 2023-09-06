@@ -1,55 +1,56 @@
 <!-- 10-Header -->  
 [![Smart Data Models](https://smartdatamodels.org/wp-content/uploads/2022/01/SmartDataModels_logo.png "Logo")](https://smartdatamodels.org)  
-エンティティ：system_pricing_plans  
-===========================<!-- /10-Header -->  
+エンティティ：システム_プライシング_プラン  
+======================<!-- /10-Header -->  
 <!-- 15-License -->  
-[オープンライセンス](https://github.com/smart-data-models//dataModel.GBFS/blob/master/system_pricing_plans/LICENSE.md)  
-[ドキュメント自動生成](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+[オープン・ライセンス](https://github.com/smart-data-models//dataModel.GBFS/blob/master/system_pricing_plans/LICENSE.md)  
+[文書は自動的に生成される](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
-グローバルな記述です。**システムの価格体系を記述する。標準GBFS2.2による**。  
+グローバルな記述：**システムの料金体系を記述する。標準 GBFS 2.2** による。  
 バージョン: 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
-## プロパティ一覧  
+## プロパティのリスト  
 
-<sup><sub>[*] 属性にタイプがない場合、複数のタイプまたは異なるフォーマット/パターンを持つ可能性があるためです</sub></sup>。  
-- `data[object]`: 以下に定義されるように、プランごとに1つのオブジェクトを含む配列。  - `id[*]`: エンティティの一意な識別子  - `last_updated[integer]`: フィードのデータが POSIX 時間で最後に更新された時刻。  - `ttl[integer]`: フィードのデータが再び更新されるまでの秒数（常にデータを更新する場合は0）。  - `type[string]`: NGSIエンティティタイプ。system_pricing_plansでなければならない。  - `version[string]`: フィードが準拠しているGBFSのバージョン番号（バージョン管理の枠組みによる）（v1.1で追加）。  <!-- /30-PropertiesList -->  
+<sup><sub>[*] 属性に型がない場合は、複数の型があるか、異なるフォーマット/パターンがある可能性があるためです</sub></sup>。  
+- `data[object]`: 以下に定義するように、1つのプランにつき1つのオブジェクトを含む配列。  	  
+- `id[*]`: エンティティの一意識別子  - `last_updated[integer]`: フィードのデータが POSIX 時間で最後に更新された時刻。  - `ttl[integer]`: フィードのデータが更新されるまでの秒数 (常に更新される場合は 0)。  - `type[string]`: NGSIエンティティタイプ。system_pricing_plansでなければならない。  - `version[string]`: バージョニングフレームワーク (v1.1 で追加) に従った、フィードが準拠している GBFS のバージョン番号。  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
-必要なプロパティ  
+必須プロパティ  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
-規格のマッピング[GBFS 2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)  
+規格のマッピング [GBFS 2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
 ## プロパティのデータモデル記述  
-アルファベット順に並びます（クリックで詳細へ）  
+アルファベット順（クリックで詳細表示）  
 <!-- /50-DataModelHeader -->  
 <!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 system_pricing_plans:    
-  description: 'Describes the pricing schemes of the system. According to the Standard GBFS 2.2'    
+  description: Describes the pricing schemes of the system. According to the Standard GBFS 2.2    
   properties:    
     data:    
-      description: 'Array that contains one object per plan as defined below.'    
+      description: Array that contains one object per plan as defined below.    
       properties:    
         plans:    
           items:    
             properties:    
               currency:    
-                description: 'Currency used to pay the fare in ISO 4217 code.'    
+                description: Currency used to pay the fare in ISO 4217 code.    
                 pattern: ^\w{3}$    
                 type: string    
               description:    
-                description: 'Customer-readable description of the pricing plan.'    
+                description: Customer-readable description of the pricing plan.    
                 type: string    
               is_taxable:    
                 description: 'Will additional tax be added to the base price?'    
                 type: boolean    
               name:    
-                description: 'Name of this pricing plan.'    
+                description: Name of this pricing plan.    
                 type: string    
               per_km_pricing:    
                 dependencies:    
@@ -61,7 +62,7 @@ system_pricing_plans:
                 items:    
                   properties:    
                     end:    
-                      description: 'The kilometer at which the rate will no longer apply (added in v2.1-RC2).'    
+                      description: The kilometer at which the rate will no longer apply (added in v2.1-RC2).    
                       minimum: 0    
                       type: number    
                     interval:    
@@ -69,10 +70,10 @@ system_pricing_plans:
                       minimum: 0    
                       type: number    
                     rate:    
-                      description: 'Rate that is charged for each kilometer interval after the start (added in v2.1-RC2).'    
+                      description: Rate that is charged for each kilometer interval after the start (added in v2.1-RC2).    
                       type: number    
                     start:    
-                      description: 'Number of kilometers that have to elapse before this segment starts applying (added in v2.1-RC2).'    
+                      description: Number of kilometers that have to elapse before this segment starts applying (added in v2.1-RC2).    
                       minimum: 0    
                       type: number    
                   type: object    
@@ -87,34 +88,34 @@ system_pricing_plans:
                 items:    
                   properties:    
                     end:    
-                      description: 'The minute at which the rate will no longer apply (added in v2.1-RC2).'    
+                      description: The minute at which the rate will no longer apply (added in v2.1-RC2).    
                       minimum: 0    
                       type: number    
                     interval:    
-                      description: 'Interval in minutes at which the rate of this segment is either reapplied (added in v2.1-RC2).'    
+                      description: Interval in minutes at which the rate of this segment is either reapplied (added in v2.1-RC2).    
                       minimum: 0    
                       type: number    
                     rate:    
-                      description: 'Rate that is charged for each minute interval after the start (added in v2.1-RC2).'    
+                      description: Rate that is charged for each minute interval after the start (added in v2.1-RC2).    
                       type: number    
                     start:    
-                      description: 'Number of minutes that have to elapse before this segment starts applying (added in v2.1-RC2).'    
+                      description: Number of minutes that have to elapse before this segment starts applying (added in v2.1-RC2).    
                       minimum: 0    
                       type: number    
                   type: object    
                 type: array    
               plan_id:    
-                description: 'Identifier of a pricing plan in the system.'    
+                description: Identifier of a pricing plan in the system.    
                 type: string    
               price:    
-                description: 'Fare price.'    
+                description: Fare price.    
                 minimum: 0    
                 type: number    
               surge_pricing:    
                 description: 'Is there currently an increase in price in response to increased demand in this pricing plan? (added in v2.1-RC2)'    
                 type: boolean    
               url:    
-                description: 'URL where the customer can learn more about this pricing plan.'    
+                description: URL where the customer can learn more about this pricing plan.    
                 format: uri    
                 type: string    
             type: object    
@@ -133,31 +134,35 @@ system_pricing_plans:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be system_pricing_plans'    
+      description: NGSI entity type. It has to be system_pricing_plans    
       enum:    
         - system_pricing_plans    
       type: string    
@@ -181,7 +186,7 @@ system_pricing_plans:
     - type    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/system_pricing_plans/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/system_pricing_plans/schema.json    
   x-model-tags: GBFS    
@@ -193,8 +198,8 @@ system_pricing_plans:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## ペイロードの例  
-#### system_pricing_plans NGSI-v2 キーバリューの例  
-ここでは、system_pricing_plansをJSON-LD形式でkey-valuesにした例を示します。これは、`options=keyValues`を使用した場合にNGSI-v2と互換性があり、個々のエンティティのコンテキストデータを返します。  
+#### system_pricing_plans NGSI-v2 キー値 例  
+以下は、system_pricing_plansをJSON-LD形式でkey-valuesとした例である。これはNGSI-v2と互換性があり、`options=keyValues`を使用すると、個々のエンティティのコンテキストデータを返す。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -233,7 +238,7 @@ system_pricing_plans:
 ```  
 </details>  
 #### system_pricing_plans NGSI-v2 正規化例  
-以下は、system_pricing_plans を JSON-LD 形式で正規化した例である。これはオプションを使用しない場合、NGSI-v2と互換性があり、個々のエンティティのコンテキストデータを返します。  
+以下は、正規化されたJSON-LD形式のsystem_pricing_plansの例である。これは、オプションを使用しない場合、NGSI-v2と互換性があり、個々のエンティティのコンテキスト・データを返します。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -286,8 +291,8 @@ system_pricing_plans:
 }  
 ```  
 </details>  
-#### system_pricing_plans NGSI-LD キーバリューの例  
-ここでは、system_pricing_plansをJSON-LD形式でkey-valuesにした例を示します。これは `options=keyValues` を使用した場合に NGSI-LD と互換性があり、個々のエンティティのコンテキストデータを返します。  
+#### system_pricing_plans NGSI-LD キー値 例  
+以下は、system_pricing_plansをJSON-LD形式でkey-valuesとした例である。options=keyValues`を使うとNGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返す。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -330,7 +335,7 @@ system_pricing_plans:
 ```  
 </details>  
 #### system_pricing_plans NGSI-LD 正規化例  
-以下は、system_pricing_plans を JSON-LD 形式で正規化した例である。これはオプションを使用しない場合のNGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
+以下は、正規化されたJSON-LD形式のsystem_pricing_plansの例である。これは、オプションを使用しない場合のNGSI-LDと互換性があり、個々のエンティティのコンテキスト・データを返します。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -387,7 +392,7 @@ system_pricing_plans:
 <!-- 90-FooterNotes -->  
 <!-- /90-FooterNotes -->  
 <!-- 95-Units -->  
-マグニチュード単位の扱いについては、[FAQ 10](https://smartdatamodels.org/index.php/faqs/)を参照してください。  
+マグニチュード単位の扱い方については、[FAQ 10](https://smartdatamodels.org/index.php/faqs/)を参照のこと。  
 <!-- /95-Units -->  
 <!-- 97-LastFooter -->  
 ---  
