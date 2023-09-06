@@ -14,8 +14,9 @@
 
 ## Liste der Eigenschaften  
 
-<sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, liegt das daran, dass es mehrere Typen oder unterschiedliche Formate/Muster haben kann</sub></sup>.  
-- `data[object]`: Array, das ein Objekt pro Plan wie unten definiert enthält.  - `id[*]`: Eindeutiger Bezeichner der Entität  - `last_updated[integer]`: Letzter Zeitpunkt der Aktualisierung der Daten im Feed in POSIX-Zeit.  - `ttl[integer]`: Anzahl der Sekunden, bevor die Daten im Feed erneut aktualisiert werden (0, wenn die Daten immer aufgefrischt werden sollen).  - `type[string]`: NGSI-Entitätstyp. Es muss system_pricing_plans sein.  - `version[string]`: GBFS-Versionsnummer, der der Feed gemäß dem Versionierungsrahmen entspricht (hinzugefügt in v1.1).  <!-- /30-PropertiesList -->  
+<sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, kann es mehrere Typen oder verschiedene Formate/Muster haben</sub></sup>.  
+- `data[object]`: Array, das ein Objekt pro Plan wie unten definiert enthält.  	  
+- `id[*]`: Eindeutiger Bezeichner der Entität  - `last_updated[integer]`: Letzter Zeitpunkt der Aktualisierung der Daten im Feed in POSIX-Zeit.  - `ttl[integer]`: Anzahl der Sekunden, bevor die Daten im Feed erneut aktualisiert werden (0, wenn die Daten immer aufgefrischt werden sollen).  - `type[string]`: NGSI-Entitätstyp. Es muss system_pricing_plans sein.  - `version[string]`: GBFS-Versionsnummer, der der Feed gemäß dem Versionierungsrahmen entspricht (hinzugefügt in v1.1).  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Erforderliche Eigenschaften  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
@@ -30,26 +31,26 @@
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 system_pricing_plans:    
-  description: 'Describes the pricing schemes of the system. According to the Standard GBFS 2.2'    
+  description: Describes the pricing schemes of the system. According to the Standard GBFS 2.2    
   properties:    
     data:    
-      description: 'Array that contains one object per plan as defined below.'    
+      description: Array that contains one object per plan as defined below.    
       properties:    
         plans:    
           items:    
             properties:    
               currency:    
-                description: 'Currency used to pay the fare in ISO 4217 code.'    
+                description: Currency used to pay the fare in ISO 4217 code.    
                 pattern: ^\w{3}$    
                 type: string    
               description:    
-                description: 'Customer-readable description of the pricing plan.'    
+                description: Customer-readable description of the pricing plan.    
                 type: string    
               is_taxable:    
                 description: 'Will additional tax be added to the base price?'    
                 type: boolean    
               name:    
-                description: 'Name of this pricing plan.'    
+                description: Name of this pricing plan.    
                 type: string    
               per_km_pricing:    
                 dependencies:    
@@ -61,7 +62,7 @@ system_pricing_plans:
                 items:    
                   properties:    
                     end:    
-                      description: 'The kilometer at which the rate will no longer apply (added in v2.1-RC2).'    
+                      description: The kilometer at which the rate will no longer apply (added in v2.1-RC2).    
                       minimum: 0    
                       type: number    
                     interval:    
@@ -69,10 +70,10 @@ system_pricing_plans:
                       minimum: 0    
                       type: number    
                     rate:    
-                      description: 'Rate that is charged for each kilometer interval after the start (added in v2.1-RC2).'    
+                      description: Rate that is charged for each kilometer interval after the start (added in v2.1-RC2).    
                       type: number    
                     start:    
-                      description: 'Number of kilometers that have to elapse before this segment starts applying (added in v2.1-RC2).'    
+                      description: Number of kilometers that have to elapse before this segment starts applying (added in v2.1-RC2).    
                       minimum: 0    
                       type: number    
                   type: object    
@@ -87,34 +88,34 @@ system_pricing_plans:
                 items:    
                   properties:    
                     end:    
-                      description: 'The minute at which the rate will no longer apply (added in v2.1-RC2).'    
+                      description: The minute at which the rate will no longer apply (added in v2.1-RC2).    
                       minimum: 0    
                       type: number    
                     interval:    
-                      description: 'Interval in minutes at which the rate of this segment is either reapplied (added in v2.1-RC2).'    
+                      description: Interval in minutes at which the rate of this segment is either reapplied (added in v2.1-RC2).    
                       minimum: 0    
                       type: number    
                     rate:    
-                      description: 'Rate that is charged for each minute interval after the start (added in v2.1-RC2).'    
+                      description: Rate that is charged for each minute interval after the start (added in v2.1-RC2).    
                       type: number    
                     start:    
-                      description: 'Number of minutes that have to elapse before this segment starts applying (added in v2.1-RC2).'    
+                      description: Number of minutes that have to elapse before this segment starts applying (added in v2.1-RC2).    
                       minimum: 0    
                       type: number    
                   type: object    
                 type: array    
               plan_id:    
-                description: 'Identifier of a pricing plan in the system.'    
+                description: Identifier of a pricing plan in the system.    
                 type: string    
               price:    
-                description: 'Fare price.'    
+                description: Fare price.    
                 minimum: 0    
                 type: number    
               surge_pricing:    
                 description: 'Is there currently an increase in price in response to increased demand in this pricing plan? (added in v2.1-RC2)'    
                 type: boolean    
               url:    
-                description: 'URL where the customer can learn more about this pricing plan.'    
+                description: URL where the customer can learn more about this pricing plan.    
                 format: uri    
                 type: string    
             type: object    
@@ -133,31 +134,35 @@ system_pricing_plans:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be system_pricing_plans'    
+      description: NGSI entity type. It has to be system_pricing_plans    
       enum:    
         - system_pricing_plans    
       type: string    
@@ -181,7 +186,7 @@ system_pricing_plans:
     - type    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/system_pricing_plans/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/system_pricing_plans/schema.json    
   x-model-tags: GBFS    
