@@ -3,34 +3,35 @@
 エンティティ：gbfs_versions  
 ====================<!-- /10-Header -->  
 <!-- 15-License -->  
-[オープンライセンス](https://github.com/smart-data-models//dataModel.GBFS/blob/master/gbfs_versions/LICENSE.md)  
-[ドキュメント自動生成](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
+[オープン・ライセンス](https://github.com/smart-data-models//dataModel.GBFS/blob/master/gbfs_versions/LICENSE.md)  
+[文書は自動的に生成される](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
-グローバルな記述です。**GBFS のドキュメントのバージョンに応じて公開されているフィードエンドポイントを一覧表示します。(v1.1で追加) Standard GBFS 2.2に従っている**。  
+グローバルな記述：**GBFS ドキュメントのバージョンに従って公開されている全てのフィードエンドポイントをリストアップ。(v1.1 で追加) 標準 GBFS 2.2** による。  
 バージョン: 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
-## プロパティ一覧  
+## プロパティのリスト  
 
-<sup><sub>[*] 属性にタイプがない場合、複数のタイプまたは異なるフォーマット/パターンを持つ可能性があるためです</sub></sup>。  
-- `data[object]`: 名前と値のペアの形式のレスポンスデータ。  - `id[*]`: エンティティの一意な識別子  - `last_updated[integer]`: フィード内のデータが POSIX 時間で最後に更新された時刻。  - `ttl[integer]`: フィードのデータが再び更新されるまでの秒数（常にデータを更新する場合は0）。  - `type[string]`: NGSIエンティティタイプ。gbfs_versions である必要があります。  - `version[string]`: フィードが準拠しているGBFSのバージョン番号（バージョン管理フレームワークによる。  <!-- /30-PropertiesList -->  
+<sup><sub>[*] 属性に型がない場合は、複数の型があるか、異なるフォーマット/パターンがある可能性があるためです</sub></sup>。  
+- `data[object]`: 名前と値のペアの形式のレスポンスデータ。  	  
+- `id[*]`: エンティティの一意識別子  - `last_updated[integer]`: フィードのデータが POSIX 時間で最後に更新された時刻。  - `ttl[integer]`: フィードのデータが更新されるまでの秒数 (常に更新される場合は 0)。  - `type[string]`: NGSIエンティティタイプ。gbfs_versionsでなければならない。  - `version[string]`: バージョニングの枠組みに従って、フィードが準拠している GBFS のバージョン番号。  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
-必要なプロパティ  
+必須プロパティ  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
 <!-- 40-RequiredProperties -->  
-規格のマッピング[GBFS 2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)  
+規格のマッピング [GBFS 2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
 ## プロパティのデータモデル記述  
-アルファベット順に並びます（クリックで詳細へ）  
+アルファベット順（クリックで詳細表示）  
 <!-- /50-DataModelHeader -->  
 <!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 gbfs_versions:    
-  description: 'Lists all feed endpoints published according to version sof the GBFS documentation. (added in v1.1) According to the Standard GBFS 2.2'    
+  description: Lists all feed endpoints published according to version sof the GBFS documentation. (added in v1.1) According to the Standard GBFS 2.2    
   properties:    
     data:    
       additionalProperties: false    
@@ -41,11 +42,11 @@ gbfs_versions:
           items:    
             properties:    
               url:    
-                description: 'URL of the corresponding gbfs.json endpoint'    
+                description: URL of the corresponding gbfs.json endpoint    
                 format: uri    
                 type: string    
               version:    
-                description: 'The semantic version of the feed in the form X.Y'    
+                description: The semantic version of the feed in the form X.Y    
                 enum:    
                   - 1.1-RC    
                   - 1.1    
@@ -70,31 +71,35 @@ gbfs_versions:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be gbfs_versions'    
+      description: NGSI entity type. It has to be gbfs_versions    
       enum:    
         - gbfs_versions    
       type: string    
@@ -124,7 +129,7 @@ gbfs_versions:
     - version    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/gbfs_versions/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/gbfs_versions/schema.json    
   x-model-tags: GBFS    
@@ -136,8 +141,8 @@ gbfs_versions:
 <!-- /70-MiddleNotes -->  
 <!-- 80-Examples -->  
 ## ペイロードの例  
-#### gbfs_versions NGSI-v2 key-value 例  
-gbfs_versionsをJSON-LD形式でkey-valuesとした例です。これは、`options=keyValues`を使った場合にNGSI-v2と互換性があり、個々のエンティティのコンテキストデータを返します。  
+#### gbfs_versions NGSI-v2 キー値の例  
+以下はgbfs_versionsをJSON-LD形式でkey-valuesとした例です。これはNGSI-v2と互換性があり、`options=keyValues`を使うと個々のエンティティのコンテキストデータを返す。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -162,7 +167,7 @@ gbfs_versions:
 ```  
 </details>  
 #### gbfs_versions NGSI-v2 正規化例  
-gbfs_versions を JSON-LD 形式で正規化した例を示します。これは，オプションを使わない場合，NGSI-v2と互換性があり，個々のエンティティのコンテキストデータを返します。  
+gbfs_versionsをJSON-LD形式で正規化した例です。これはNGSI-v2と互換性があり、オプションを使わない場合は個々のエンティティのコンテキストデータを返します。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -198,8 +203,8 @@ gbfs_versions:
 }  
 ```  
 </details>  
-#### gbfs_versions NGSI-LD key-value 例  
-gbfs_versionsをJSON-LD形式でkey-valuesとした例です。これは、`options=keyValues`を使った場合にNGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
+#### gbfs_versions NGSI-LD キー値の例  
+以下はgbfs_versionsをJSON-LD形式でkey-valuesとした例です。options=keyValues`を使うとNGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返す。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -228,7 +233,7 @@ gbfs_versions:
 ```  
 </details>  
 #### gbfs_versions NGSI-LD 正規化例  
-gbfs_versions を JSON-LD 形式で正規化した例を示します。これはオプションを使わない場合のNGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
+gbfs_versionsをJSON-LD形式で正規化した例です。これは、オプションを使わない場合はNGSI-LDと互換性があり、個々のエンティティのコンテキストデータを返します。  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -271,7 +276,7 @@ gbfs_versions:
 <!-- 90-FooterNotes -->  
 <!-- /90-FooterNotes -->  
 <!-- 95-Units -->  
-マグニチュード単位の扱いについては、[FAQ 10](https://smartdatamodels.org/index.php/faqs/)を参照してください。  
+マグニチュード単位の扱い方については、[FAQ 10](https://smartdatamodels.org/index.php/faqs/)を参照のこと。  
 <!-- /95-Units -->  
 <!-- 97-LastFooter -->  
 ---  
