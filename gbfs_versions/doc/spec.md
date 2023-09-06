@@ -15,7 +15,8 @@
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `data[object]`: Response data in the form of name:value pairs.  - `id[*]`: Unique identifier of the entity  - `last_updated[integer]`: Last time the data in the feed was updated in POSIX time.  - `ttl[integer]`: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).  - `type[string]`: NGSI entity type. It has to be gbfs_versions  - `version[string]`: GBFS version number to which the feed conforms, according to the versioning framework.  <!-- /30-PropertiesList -->  
+- `data[object]`: Response data in the form of name:value pairs.  	  
+- `id[*]`: Unique identifier of the entity  - `last_updated[integer]`: Last time the data in the feed was updated in POSIX time.  - `ttl[integer]`: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).  - `type[string]`: NGSI entity type. It has to be gbfs_versions  - `version[string]`: GBFS version number to which the feed conforms, according to the versioning framework.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
@@ -30,7 +31,7 @@
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 gbfs_versions:    
-  description: 'Lists all feed endpoints published according to version sof the GBFS documentation. (added in v1.1) According to the Standard GBFS 2.2'    
+  description: Lists all feed endpoints published according to version sof the GBFS documentation. (added in v1.1) According to the Standard GBFS 2.2    
   properties:    
     data:    
       additionalProperties: false    
@@ -41,11 +42,11 @@ gbfs_versions:
           items:    
             properties:    
               url:    
-                description: 'URL of the corresponding gbfs.json endpoint'    
+                description: URL of the corresponding gbfs.json endpoint    
                 format: uri    
                 type: string    
               version:    
-                description: 'The semantic version of the feed in the form X.Y'    
+                description: The semantic version of the feed in the form X.Y    
                 enum:    
                   - 1.1-RC    
                   - 1.1    
@@ -70,31 +71,35 @@ gbfs_versions:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be gbfs_versions'    
+      description: NGSI entity type. It has to be gbfs_versions    
       enum:    
         - gbfs_versions    
       type: string    
@@ -124,7 +129,7 @@ gbfs_versions:
     - version    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/gbfs_versions/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/gbfs_versions/schema.json    
   x-model-tags: GBFS    
