@@ -7,7 +7,7 @@
 [documento generato automaticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
-Descrizione globale: **Dettagli che includono il gestore del sistema, l'ubicazione del sistema, l'anno di implementazione, l'URL, le informazioni di contatto, il fuso orario. Secondo lo Standard GBFS 2.2**  
+Descrizione globale: **Dettagli che includono il gestore del sistema, l'ubicazione del sistema, l'anno di implementazione, l'URL, le informazioni di contatto, il fuso orario. Secondo lo standard GBFS 2.2**  
 versione: 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
@@ -15,7 +15,20 @@
 ## Elenco delle proprietà  
 
 <sup><sub>[*] Se non c'è un tipo in un attributo è perché potrebbe avere diversi tipi o diversi formati/modelli</sub></sup>.  
-- `data[object]`: Dati di risposta sotto forma di coppie nome:valore.  - `id[*]`: Identificatore univoco dell'entità  - `last_updated[integer]`: Ultima volta che i dati del feed sono stati aggiornati in tempo POSIX.  - `ttl[integer]`: Numero di secondi prima che i dati del feed vengano nuovamente aggiornati (0 se i dati devono essere sempre aggiornati).  - `type[string]`: Tipo di entità NGSI. Deve essere system_information  - `version[string]`: Numero di versione di GBFS a cui il feed è conforme, secondo il framework di versioning (aggiunto nella v1.1).  <!-- /30-PropertiesList -->  
+- `data[object]`: Dati di risposta sotto forma di coppie nome:valore.  	- `email[email]`: Indirizzo e-mail monitorato attivamente dal servizio clienti dell'operatore.    
+	- `feed_contact_email[email]`: Un unico indirizzo e-mail di contatto per i consumatori di questo feed per segnalare problemi tecnici (aggiunto nella v1.1).    
+	- `language[string]`: La lingua che sarà utilizzata nel resto dei file. Deve corrispondere al valore del file gbfs.json.    
+	- `license_url[uri]`: Un URL completamente qualificato di una pagina che definisce i termini di licenza per i dati GBFS per questo sistema.    
+	- `name[string]`: Nome del sistema da mostrare ai clienti.    
+	- `operator[string]`: Nome dell'operatore    
+	- `phone_number[string]`: Un singolo numero di telefono vocale per il sistema specificato che presenta il numero di telefono come tipico dell'area di servizio del sistema.    
+	- `purchase_url[uri]`: URL in cui il cliente può acquistare un'iscrizione.    
+	- `rental_apps[object]`: Contiene le informazioni sulle app in affitto negli oggetti JSON di android e ios (aggiunti nella v1.1).    
+	- `short_name[string]`: Abbreviazione facoltativa di un sistema.    
+	- `start_date[string]`: Data di inizio attività del sistema.    
+	- `system_id[string]`: Identificatore del sistema di condivisione dei veicoli. Dovrebbe essere unico a livello globale (anche tra sistemi diversi).    
+	- `timezone[string]`: Il fuso orario in cui si trova il sistema.    
+- `id[*]`: Identificatore univoco dell'entità  - `last_updated[integer]`: Ultima volta che i dati del feed sono stati aggiornati in tempo POSIX.  - `ttl[integer]`: Numero di secondi prima che i dati del feed vengano nuovamente aggiornati (0 se i dati devono essere sempre aggiornati).  - `type[string]`: Tipo di entità NGSI. Deve essere system_information  - `version[string]`: Numero di versione di GBFS a cui il feed è conforme, secondo il framework di versioning (aggiunto nella v1.1).  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Proprietà richieste  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
@@ -36,50 +49,50 @@ system_information:
       description: 'Response data in the form of name:value pairs.'    
       properties:    
         email:    
-          description: 'Email address actively monitored by the operator''s customer service department.'    
+          description: Email address actively monitored by the operator's customer service department.    
           format: email    
           type: string    
         feed_contact_email:    
-          description: 'A single contact email address for consumers of this feed to report technical issues (added in v1.1).'    
+          description: A single contact email address for consumers of this feed to report technical issues (added in v1.1).    
           format: email    
           type: string    
         language:    
-          description: 'The language that will be used throughout the rest of the files. It must match the value in the gbfs.json file.'    
+          description: The language that will be used throughout the rest of the files. It must match the value in the gbfs.json file.    
           pattern: ^[a-z]{2,3}(-[A-Z]{2})?$    
           type: string    
         license_url:    
-          description: 'A fully qualified URL of a page that defines the license terms for the GBFS data for this system.'    
+          description: A fully qualified URL of a page that defines the license terms for the GBFS data for this system.    
           format: uri    
           type: string    
         name:    
-          description: 'Name of the system to be displayed to customers.'    
+          description: Name of the system to be displayed to customers.    
           type: string    
         operator:    
-          description: 'Name of the operator'    
+          description: Name of the operator    
           type: string    
         phone_number:    
-          description: 'A single voice telephone number for the specified system that presents the telephone number as typical for the system''s service area.'    
+          description: A single voice telephone number for the specified system that presents the telephone number as typical for the system's service area.    
           type: string    
         purchase_url:    
-          description: 'URL where a customer can purchase a membership.'    
+          description: URL where a customer can purchase a membership.    
           format: uri    
           type: string    
         rental_apps:    
-          description: 'Contains rental app information in the android and ios JSON objects (added in v1.1).'    
+          description: Contains rental app information in the android and ios JSON objects (added in v1.1).    
           properties:    
             android:    
               dependencies:    
                 android:    
                   - store_uri    
                   - discovery_uri    
-              description: 'Contains rental app download and app discovery information for the Android platform. (added in v1.1)'    
+              description: Contains rental app download and app discovery information for the Android platform. (added in v1.1)    
               properties:    
                 discovery_uri:    
-                  description: 'URI that can be used to discover if the rental Android app is installed on the device (added in v1.1).'    
+                  description: URI that can be used to discover if the rental Android app is installed on the device (added in v1.1).    
                   format: uri    
                   type: string    
                 store_uri:    
-                  description: 'URI where the rental Android app can be downloaded from (added in v1.1).'    
+                  description: URI where the rental Android app can be downloaded from (added in v1.1).    
                   format: uri    
                   type: string    
               type: object    
@@ -88,33 +101,33 @@ system_information:
                 ios:    
                   - store_uri    
                   - discovery_uri    
-              description: 'Contains rental information for the iOS platform (added in v1.1).'    
+              description: Contains rental information for the iOS platform (added in v1.1).    
               properties:    
                 discovery_uri:    
-                  description: 'URI that can be used to discover if the rental iOS app is installed on the device (added in v1.1).'    
+                  description: URI that can be used to discover if the rental iOS app is installed on the device (added in v1.1).    
                   format: uri    
                   type: string    
                 store_uri:    
-                  description: 'URI where the rental iOS app can be downloaded from (added in v1.1).'    
+                  description: URI where the rental iOS app can be downloaded from (added in v1.1).    
                   format: uri    
                   type: string    
               type: object    
           type: object    
         short_name:    
-          description: 'Optional abbreviation for a system.'    
+          description: Optional abbreviation for a system.    
           type: string    
         start_date:    
-          description: 'Date that the system began operations.'    
+          description: Date that the system began operations.    
           pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$    
           type: string    
         system_id:    
-          description: 'Identifier for this vehicle share system. This should be globally unique (even between different systems).'    
+          description: Identifier for this vehicle share system. This should be globally unique (even between different systems).    
           type: string    
         timezone:    
-          description: 'The time zone where the system is located.'    
+          description: The time zone where the system is located.    
           type: string    
         url:    
-          description: 'The URL of the vehicle share system.'    
+          description: The URL of the vehicle share system.    
           format: uri    
           type: string    
       required:    
@@ -127,31 +140,35 @@ system_information:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be system_information'    
+      description: NGSI entity type. It has to be system_information    
       enum:    
         - system_information    
       type: string    
@@ -180,7 +197,7 @@ system_information:
     - version    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/system_information/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/system_information/schema.json    
   x-model-tags: GBFS    
