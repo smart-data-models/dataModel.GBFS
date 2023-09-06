@@ -7,15 +7,16 @@
 [documento generado automáticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
-Descripción global: **Describe la capacidad y la disponibilidad de alquiler de la estación Según la Norma GBFS 2.2**  
+Descripción global: **Describe la capacidad y disponibilidad de alquiler de la estación Según la Norma GBFS 2.2**  
 versión: 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
 ## Lista de propiedades  
 
-<sup><sub>[*] Si no hay un tipo en un atributo es porque puede tener varios tipos o diferentes formatos/patrones</sub></sup>  
-- `data[object]`: Matriz que contiene un objeto por estación como se define a continuación.  - `id[*]`: Identificador único de la entidad  - `last_updated[integer]`: Última vez que se actualizaron los datos del feed en tiempo POSIX.  - `ttl[integer]`: Número de segundos antes de que los datos del feed se actualicen de nuevo (0 si los datos deben actualizarse siempre).  - `type[string]`: Tipo de entidad NGSI. Tiene que ser station_status  - `version[string]`: Número de versión de GBFS al que se ajusta el feed, según el marco de versiones (añadido en la v1.1).  <!-- /30-PropertiesList -->  
+<sup><sub>[*] Si no hay un tipo en un atributo es porque puede tener varios tipos o diferentes formatos/patrones</sub></sup>.  
+- `data[object]`: Matriz que contiene un objeto por estación, tal como se define a continuación.  	  
+- `id[*]`: Identificador único de la entidad  - `last_updated[integer]`: Última vez que se actualizaron los datos del feed en tiempo POSIX.  - `ttl[integer]`: Número de segundos antes de que los datos del feed se actualicen de nuevo (0 si los datos deben actualizarse siempre).  - `type[string]`: Tipo de entidad NGSI. Tiene que ser station_status  - `version[string]`: Número de versión de GBFS al que se ajusta el feed, según el marco de versiones (añadido en la v1.1).  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Propiedades requeridas  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
@@ -23,17 +24,17 @@
 Asignación de la norma [GBFS 2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
-## Descripción del modelo de datos de las propiedades  
-Ordenados alfabéticamente (haga clic para ver los detalles)  
+## Descripción de las propiedades del modelo de datos  
+Ordenados alfabéticamente (pulse para más detalles)  
 <!-- /50-DataModelHeader -->  
 <!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 station_status:    
-  description: 'Describes the capacity and rental availability of the station According to the Standard GBFS 2.2'    
+  description: Describes the capacity and rental availability of the station According to the Standard GBFS 2.2    
   properties:    
     data:    
-      description: 'Array that contains one object per station as defined below.'    
+      description: Array that contains one object per station as defined below.    
       properties:    
         stations:    
           items:    
@@ -48,56 +49,56 @@ station_status:
                 description: 'Is the station accepting vehicle returns?'    
                 type: boolean    
               last_reported:    
-                description: 'The last time this station reported its status to the operator''s backend in POSIX time.'    
+                description: The last time this station reported its status to the operator's backend in POSIX time.    
                 minimum: 1450155600    
                 type: number    
               num_bikes_available:    
-                description: 'Number of vehicles of any type physically available for rental at the station.'    
+                description: Number of vehicles of any type physically available for rental at the station.    
                 minimum: 0    
                 type: number    
               num_bikes_disabled:    
-                description: 'Number of disabled vehicles of any type at the station.'    
+                description: Number of disabled vehicles of any type at the station.    
                 minimum: 0    
                 type: number    
               num_docks_available:    
-                description: 'Number of functional docks physically at the station.'    
+                description: Number of functional docks physically at the station.    
                 minimum: 0    
                 type: number    
               num_docks_disabled:    
-                description: 'Number of empty but disabled docks at the station.'    
+                description: Number of empty but disabled docks at the station.    
                 minimum: 0    
                 type: number    
               station_id:    
-                description: 'Identifier of a station.'    
+                description: Identifier of a station.    
                 type: string    
               vehicle_docks_available:    
                 dependencies:    
                   vehicle_docks_available:    
                     - vehicle_type_ids    
                     - count    
-                description: 'Object displaying available docks by vehicle type (added in v2.1-RC).'    
+                description: Object displaying available docks by vehicle type (added in v2.1-RC).    
                 items:    
                   properties:    
                     count:    
-                      description: 'A number representing the total number of available docks for the defined vehicle type (added in v2.1-RC).'    
+                      description: A number representing the total number of available docks for the defined vehicle type (added in v2.1-RC).    
                       minimum: 0    
                       type: number    
                     vehicle_type_ids:    
-                      description: 'An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station (added in v2.1-RC).'    
+                      description: An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station (added in v2.1-RC).    
                       items:    
                         type: string    
                       type: array    
                   type: object    
                 type: array    
               vehicles:    
-                description: 'Array of objects containing data about a specific vehicle that is present at the docking station (added in v2.1-RC).'    
+                description: Array of objects containing data about a specific vehicle that is present at the docking station (added in v2.1-RC).    
                 items:    
                   properties:    
                     bike_id:    
-                      description: 'Rotated identifier of a vehicle (added in v2.1-RC).'    
+                      description: Rotated identifier of a vehicle (added in v2.1-RC).    
                       type: string    
                     current_range_meters:    
-                      description: 'The furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle''s current charge or fuel (added in v2.1-RC).'    
+                      description: The furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel (added in v2.1-RC).    
                       minimum: 0    
                       type: number    
                     is_disabled:    
@@ -107,7 +108,7 @@ station_status:
                       description: 'Is the vehicle currently reserved for someone else? (added in v2.1-RC)'    
                       type: boolean    
                     vehicle_type_id:    
-                      description: 'The vehicle_type_id of this vehicle as described in vehicle_types.json (added in v2.1-RC).'    
+                      description: The vehicle_type_id of this vehicle as described in vehicle_types.json (added in v2.1-RC).    
                       type: string    
                   type: object    
                 required:    
@@ -117,15 +118,15 @@ station_status:
                   - vehicle_type_id    
                 type: array    
               vehicles_types_available:    
-                description: 'Array of objects displaying the total number of each vehicle type at the station (added in v2.1-RC).'    
+                description: Array of objects displaying the total number of each vehicle type at the station (added in v2.1-RC).    
                 items:    
                   properties:    
                     count:    
-                      description: 'A number representing the total amount of this vehicle type at the station (added in v2.1-RC).'    
+                      description: A number representing the total amount of this vehicle type at the station (added in v2.1-RC).    
                       minimum: 0    
                       type: number    
                     vehicle_type_id:    
-                      description: 'The vehicle_type_id of vehicle at the station (added in v2.1-RC).'    
+                      description: The vehicle_type_id of vehicle at the station (added in v2.1-RC).    
                       type: string    
                   type: object    
                 type: array    
@@ -145,31 +146,35 @@ station_status:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be station_status'    
+      description: NGSI entity type. It has to be station_status    
       enum:    
         - station_status    
       type: string    
@@ -194,7 +199,7 @@ station_status:
     - version    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/station_status/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/station_status/schema.json    
   x-model-tags: GBFS    
@@ -207,7 +212,7 @@ station_status:
 <!-- 80-Examples -->  
 ## Ejemplo de carga útil  
 #### station_status NGSI-v2 key-values Ejemplo  
-Aquí hay un ejemplo de station_status en formato JSON-LD como valores-clave. Esto es compatible con NGSI-v2 cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+A continuación se muestra un ejemplo de station_status en formato JSON-LD como key-values. Esto es compatible con NGSI-v2 cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -289,8 +294,8 @@ station_status:
 }  
 ```  
 </details>  
-#### station_status NGSI-v2 normalizado Ejemplo  
-Este es un ejemplo de station_status en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+#### station_status NGSI-v2 normalized Ejemplo  
+He aquí un ejemplo de station_status en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -385,7 +390,7 @@ station_status:
 ```  
 </details>  
 #### station_status NGSI-LD key-values Ejemplo  
-Aquí hay un ejemplo de station_status en formato JSON-LD como valores-clave. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+A continuación se muestra un ejemplo de station_status en formato JSON-LD como key-values. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -472,7 +477,7 @@ station_status:
 ```  
 </details>  
 #### station_status NGSI-LD normalizado Ejemplo  
-Este es un ejemplo de station_status en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+He aquí un ejemplo de station_status en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -573,7 +578,7 @@ station_status:
 <!-- 90-FooterNotes -->  
 <!-- /90-FooterNotes -->  
 <!-- 95-Units -->  
-Consulte [FAQ 10](https://smartdatamodels.org/index.php/faqs/) para obtener una respuesta sobre cómo tratar las unidades de magnitud  
+Consulte [FAQ 10](https://smartdatamodels.org/index.php/faqs/) para obtener una respuesta sobre cómo tratar las unidades de magnitud.  
 <!-- /95-Units -->  
 <!-- 97-LastFooter -->  
 ---  
