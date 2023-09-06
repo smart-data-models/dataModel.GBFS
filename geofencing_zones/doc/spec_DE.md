@@ -14,8 +14,9 @@
 
 ## Liste der Eigenschaften  
 
-<sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, liegt das daran, dass es mehrere Typen oder unterschiedliche Formate/Muster haben kann</sub></sup>.  
-- `data[object]`: Array, das Geofencing-Informationen für das System enthält.  - `id[*]`: Eindeutiger Bezeichner der Entität  - `last_updated[integer]`: Letzter Zeitpunkt der Aktualisierung der Daten im Feed in POSIX-Zeit.  - `ttl[integer]`: Anzahl der Sekunden, bevor die Daten im Feed erneut aktualisiert werden (0, wenn die Daten immer aufgefrischt werden sollen).  - `type[string]`: NGSI-Entitätstyp. Es muss geofencing_zones sein  - `version[string]`: GBFS-Versionsnummer, der der Feed gemäß dem Versionierungsrahmen entspricht.  <!-- /30-PropertiesList -->  
+<sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, kann es mehrere Typen oder verschiedene Formate/Muster haben</sub></sup>.  
+- `data[object]`: Array, das Geofencing-Informationen für das System enthält.  	  
+- `id[*]`: Eindeutiger Bezeichner der Entität  - `last_updated[integer]`: Letzter Zeitpunkt der Aktualisierung der Daten im Feed in POSIX-Zeit.  - `ttl[integer]`: Anzahl der Sekunden, bevor die Daten im Feed erneut aktualisiert werden (0, wenn die Daten immer aufgefrischt werden sollen).  - `type[string]`: NGSI-Entitätstyp. Es muss geofencing_zones sein  - `version[string]`: GBFS-Versionsnummer, der der Feed gemäß dem Versionierungsrahmen entspricht.  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Erforderliche Eigenschaften  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
@@ -30,80 +31,35 @@
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 geofencing_zones:    
-  description: 'Describes geofencing zones and their associated rules and attributes (added in v2.1-RC). According to the Standard GBFS 2.2'    
+  description: Describes geofencing zones and their associated rules and attributes (added in v2.1-RC). According to the Standard GBFS 2.2    
   properties:    
     data:    
-      description: 'Array that contains geofencing information for the system.'    
+      description: Array that contains geofencing information for the system.    
       properties:    
         geofencing_zones:    
-          description: 'Each geofenced zone and its associated rules and attributes is described as an object within the array of features.'    
+          description: Each geofenced zone and its associated rules and attributes is described as an object within the array of features.    
           properties:    
             features:    
-              description: 'Array of objects.'    
+              description: Array of objects.    
               items:    
                 properties:    
                   geometry:    
                     description: 'A polygon that describes where rides might not be able to start, end, go through, or have otehr limitations. Must follow the right-hand rule.'    
                     properties:    
                       coordinates:    
-                        items:    
-                          items:    
-                            items:    
-                              items:    
-                                type: number    
-                              minItems: 2    
-                              type: array    
-                            minItems: 4    
-                            type: array    
-                          type: array    
-                        type: array    
                       type:    
-                        enum:    
-                          - MultiPolygon    
-                        type: string    
                     required:    
                       - type    
                       - coordinates    
-                    title: 'GeoJSON MultiPolygon'    
+                    title: GeoJSON MultiPolygon    
                     type: object    
                   properties:    
-                    description: 'Describing travel allowances and limitations.'    
+                    description: Describing travel allowances and limitations.    
                     properties:    
                       end:    
-                        description: 'End time of the geofencing zone in POSIX time.'    
-                        minimum: 1450155600    
-                        type: number    
                       name:    
-                        description: 'Public name of the geofencing zone.'    
-                        type: string    
                       rules:    
-                        description: 'Array that contains one object per rule.'    
-                        items:    
-                          properties:    
-                            maximum_speed_kph:    
-                              description: 'What is the maximum speed allowed, in kilometers per hour?'    
-                              minimum: 0    
-                              type: number    
-                            ride_allowed:    
-                              description: 'Is the undocked ride allowed to stat and end in this zone?'    
-                              type: boolean    
-                            ride_through_allowed:    
-                              description: 'Is the ride allowed to travel through this zone?'    
-                              type: boolean    
-                            vehicle_type_id:    
-                              description: 'Array of vehicle type IDs for which these restrictions apply.'    
-                              items:    
-                                type: string    
-                              type: array    
-                          required:    
-                            - ride_allowed    
-                            - ride_through_allowed    
-                          type: object    
-                        type: array    
                       start:    
-                        description: 'Start time of the geofencing zone in POSIX time.'    
-                        minimum: 1450155600    
-                        type: number    
                     type: object    
                   type:    
                     enum:    
@@ -113,11 +69,11 @@ geofencing_zones:
                   - type    
                   - geometry    
                   - properties    
-                title: 'GeoJSON Feature'    
+                title: GeoJSON Feature    
                 type: object    
               type: array    
             type:    
-              description: 'FeatureCollection as per IETF RFC 7946.'    
+              description: FeatureCollection as per IETF RFC 7946.    
               enum:    
                 - FeatureCollection    
               type: string    
@@ -130,31 +86,35 @@ geofencing_zones:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be geofencing_zones'    
+      description: NGSI entity type. It has to be geofencing_zones    
       enum:    
         - geofencing_zones    
       type: string    
@@ -181,7 +141,7 @@ geofencing_zones:
     - version    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/geofencing_zones/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/geofencing_zones/schema.json    
   x-model-tags: GBFS    
