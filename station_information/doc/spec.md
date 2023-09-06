@@ -15,7 +15,8 @@
 ## List of properties  
 
 <sup><sub>[*] If there is not a type in an attribute is because it could have several types or different formats/patterns</sub></sup>  
-- `data[object]`: Array that contains one object per station as defined below.  - `id[*]`: Unique identifier of the entity  - `last_updated[integer]`: Last time the data in the feed was updated in POSIX time.  - `ttl[integer]`: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).  - `type[string]`: NGSI entity type. It has to be station_information  - `version[string]`: GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).  <!-- /30-PropertiesList -->  
+- `data[object]`: Array that contains one object per station as defined below.  	  
+- `id[*]`: Unique identifier of the entity  - `last_updated[integer]`: Last time the data in the feed was updated in POSIX time.  - `ttl[integer]`: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).  - `type[string]`: NGSI entity type. It has to be station_information  - `version[string]`: GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Required properties  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
@@ -33,20 +34,20 @@ station_information:
   description: 'Details including system operator, system location, year implemented, URL, contact info, time zone. According to the Standard GBFS 2.2'    
   properties:    
     data:    
-      description: 'Array that contains one object per station as defined below.'    
+      description: Array that contains one object per station as defined below.    
       properties:    
         stations:    
           items:    
             properties:    
               address:    
-                description: 'Address where station is located.'    
+                description: Address where station is located.    
                 type: string    
               capacity:    
                 description: 'Number of total docking points installed at this station, both available and unavailable.'    
                 minimum: 0    
                 type: number    
               cross_street:    
-                description: 'Cross street or landmark where the station is located.'    
+                description: Cross street or landmark where the station is located.    
                 type: string    
               is_valet_station:    
                 description: 'Are valet services provided at this station? (added in v2.1-RC)'    
@@ -55,26 +56,26 @@ station_information:
                 description: 'Is this station a location with or without physical infrastructure? (added in v2.1-RC)'    
                 type: boolean    
               lat:    
-                description: 'The latitude of the station.'    
+                description: The latitude of the station.    
                 maximum: 90    
                 minimum: -90    
                 type: number    
               lon:    
-                description: 'The longitude fo the station.'    
+                description: The longitude fo the station.    
                 maximum: 180    
                 minimum: -180    
                 type: number    
               name:    
-                description: 'Public name of the station.'    
+                description: Public name of the station.    
                 type: string    
               post_code:    
-                description: 'Postal code where station is located.'    
+                description: Postal code where station is located.    
                 type: string    
               region_id:    
-                description: 'Identifier of the region where the station is located.'    
+                description: Identifier of the region where the station is located.    
                 type: string    
               rental_methods:    
-                description: 'Payment methods accepted at this station.'    
+                description: Payment methods accepted at this station.    
                 items:    
                   enum:    
                     - key    
@@ -92,34 +93,27 @@ station_information:
                 description: 'Contains rental uris for Android, iOS, and web in the android, ios, and web fields (added in v1.1).'    
                 properties:    
                   android:    
-                    description: 'URI that can be passed to an Android app with an intent (added in v1.1).'    
+                    description: URI that can be passed to an Android app with an intent (added in v1.1).    
                     format: uri    
                     type: string    
                   ios:    
-                    description: 'URI that can be used on iOS to launch the rental app for this station (added in v1.1).'    
+                    description: URI that can be used on iOS to launch the rental app for this station (added in v1.1).    
                     format: uri    
                     type: string    
                   web:    
-                    description: 'URL that can be used by a web browser to show more information about renting a vehicle at this station (added in v1.1).'    
+                    description: URL that can be used by a web browser to show more information about renting a vehicle at this station (added in v1.1).    
                     format: uri    
                     type: string    
                 type: object    
               short_name:    
-                description: 'Short name or other type of identifier.'    
+                description: Short name or other type of identifier.    
                 type: string    
               station_area:    
-                description: 'A multipolygon that describes the area of a virtual station (added in v2.1-RC).'    
+                description: A multipolygon that describes the area of a virtual station (added in v2.1-RC).    
                 properties:    
                   coordinates:    
                     items:    
                       items:    
-                        items:    
-                          items:    
-                            type: number    
-                          minItems: 2    
-                          type: array    
-                        minItems: 4    
-                        type: array    
                       type: array    
                     type: array    
                   type:    
@@ -131,17 +125,17 @@ station_information:
                   - coordinates    
                 type: object    
               station_id:    
-                description: 'Identifier of a station.'    
+                description: Identifier of a station.    
                 type: string    
               vehicle_capacity:    
                 additionalProperties:    
                   type: number    
-                description: 'An object where each key is a vehicle_type_id and the value is a number presenting the total number of vehicles of this type that can park within the station_area (added in v2.1-RC).'    
+                description: An object where each key is a vehicle_type_id and the value is a number presenting the total number of vehicles of this type that can park within the station_area (added in v2.1-RC).    
                 type: object    
               vehicle_type_capacity:    
                 additionalProperties:    
                   type: number    
-                description: 'An object where each key is a vehicle_type_id and the value is a number representing the total docking points installed at this station for each vehicle type (added in v2.1-RC).'    
+                description: An object where each key is a vehicle_type_id and the value is a number representing the total docking points installed at this station for each vehicle type (added in v2.1-RC).    
                 type: object    
             required:    
               - station_id    
@@ -157,31 +151,35 @@ station_information:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be station_information'    
+      description: NGSI entity type. It has to be station_information    
       enum:    
         - station_information    
       type: string    
@@ -206,7 +204,7 @@ station_information:
     - type    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/station_information/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/station_information/schema.json    
   x-model-tags: GBFS    
