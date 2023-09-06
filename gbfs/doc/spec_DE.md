@@ -14,7 +14,7 @@
 
 ## Liste der Eigenschaften  
 
-<sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, liegt das daran, dass es mehrere Typen oder unterschiedliche Formate/Muster haben kann</sub></sup>.  
+<sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, kann es mehrere Typen oder verschiedene Formate/Muster haben</sub></sup>.  
 - `data[object]`: Antwortdaten in Form von Name:Wert-Paaren.  - `id[*]`: Eindeutiger Bezeichner der Entität  - `last_updated[integer]`: Letzter Zeitpunkt der Aktualisierung der Daten im Feed in POSIX-Zeit.  - `ttl[integer]`: Anzahl der Sekunden, bevor die Daten im Feed erneut aktualisiert werden (0, wenn die Daten immer aufgefrischt werden sollen).  - `type[string]`: NGSI-Entitätstyp. Es muss gbfs sein  - `version[string]`: GBFS-Versionsnummer, der der Feed gemäß dem Versionierungsrahmen entspricht (hinzugefügt in v1.1).  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Erforderliche Eigenschaften  
@@ -30,7 +30,7 @@
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 gbfs:    
-  description: 'Auto-discovery file that links to all of the other files published by the system. According to the Standard GBFS 2.2'    
+  description: Auto-discovery file that links to all of the other files published by the system. According to the Standard GBFS 2.2    
   properties:    
     data:    
       description: 'Response data in the form of name:value pairs.'    
@@ -38,11 +38,11 @@ gbfs:
         ^[a-z]{2,3}(-[A-Z]{2})?$:    
           properties:    
             feeds:    
-              description: 'An array of all of the feeds that are published by the auto-discovery file. Each element in the array is an object with the keys below.'    
+              description: An array of all of the feeds that are published by the auto-discovery file. Each element in the array is an object with the keys below.    
               items:    
                 properties:    
                   name:    
-                    description: 'Key identifying the type of feed this is. The key must be the base file name defined in the spec for the corresponding feed type.'    
+                    description: Key identifying the type of feed this is. The key must be the base file name defined in the spec for the corresponding feed type.    
                     enum:    
                       - gbfs    
                       - gbfs_versions    
@@ -59,7 +59,7 @@ gbfs:
                       - geofencing_zones    
                     type: string    
                   url:    
-                    description: 'URL for the feed.'    
+                    description: URL for the feed.    
                     format: uri    
                     type: string    
                 required:    
@@ -73,31 +73,35 @@ gbfs:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be gbfs'    
+      description: NGSI entity type. It has to be gbfs    
       enum:    
         - gbfs    
       type: string    
@@ -124,7 +128,7 @@ gbfs:
     - version    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/gbfs/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/gbfs/schema.json    
   x-model-tags: GBFS    
@@ -228,7 +232,7 @@ gbfs:
 ```  
 </details>  
 #### gbfs NGSI-LD normalisiert Beispiel  
-Hier ist ein Beispiel für ein gbfs im JSON-LD-Format in normalisierter Form. Dies ist mit NGSI-LD kompatibel, wenn keine Optionen verwendet werden, und liefert die Kontextdaten einer einzelnen Entität.  
+Hier ist ein Beispiel für ein gbfs im JSON-LD-Format in normalisierter Form. Dies ist kompatibel mit NGSI-LD, wenn keine Optionen verwendet werden, und liefert die Kontextdaten einer einzelnen Entität.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
