@@ -15,7 +15,8 @@
 ## Liste der Eigenschaften  
 
 <sup><sub>[*] Wenn es für ein Attribut keinen Typ gibt, kann es mehrere Typen oder verschiedene Formate/Muster haben</sub></sup>.  
-- `data[object]`: Array, das Ad-hoc-Warnungen für das System enthält.  - `id[*]`: Eindeutiger Bezeichner der Entität  - `last_updated[integer]`: Letzter Zeitpunkt der Aktualisierung der Daten im Feed in POSIX-Zeit.  - `ttl[integer]`: Anzahl der Sekunden, bevor die Daten im Feed erneut aktualisiert werden (0, wenn die Daten immer aufgefrischt werden sollen).  - `type[string]`: NGSI-Entitätstyp. Es muss system_alerts sein.  - `version[string]`: GBFS-Versionsnummer, der der Feed gemäß dem Versionierungsrahmen entspricht (hinzugefügt in v1.1).  <!-- /30-PropertiesList -->  
+- `data[object]`: Array, das Ad-hoc-Warnungen für das System enthält.  	  
+- `id[*]`: Eindeutiger Bezeichner der Entität  - `last_updated[integer]`: Letzter Zeitpunkt der Aktualisierung der Daten im Feed in POSIX-Zeit.  - `ttl[integer]`: Anzahl der Sekunden, bevor die Daten im Feed erneut aktualisiert werden (0, wenn die Daten immer aufgefrischt werden sollen).  - `type[string]`: NGSI-Entitätstyp. Es muss system_alerts sein.  - `version[string]`: GBFS-Versionsnummer, der der Feed gemäß dem Versionierungsrahmen entspricht (hinzugefügt in v1.1).  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Erforderliche Eigenschaften  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
@@ -30,48 +31,48 @@
 <details><summary><strong>full yaml details</strong></summary>    
 ```yaml  
 system_alerts:    
-  description: 'Describes ad-hoc changes to the system. According to the Standard GBFS 2.2'    
+  description: Describes ad-hoc changes to the system. According to the Standard GBFS 2.2    
   properties:    
     data:    
-      description: 'Array that contains ad-hoc alerts for the system.'    
+      description: Array that contains ad-hoc alerts for the system.    
       properties:    
         alerts:    
           items:    
             properties:    
               alert_id:    
-                description: 'Identifier for this alert.'    
+                description: Identifier for this alert.    
                 type: string    
               description:    
-                description: 'Detailed description of the alert.'    
+                description: Detailed description of the alert.    
                 type: string    
               last_updated:    
-                description: 'Indicates the last time the info for the alert was updated.'    
+                description: Indicates the last time the info for the alert was updated.    
                 minimum: 1450155600    
                 type: number    
               region_ids:    
-                description: 'Array of identifiers of the regions for which this alert applies.'    
+                description: Array of identifiers of the regions for which this alert applies.    
                 items:    
                   type: string    
                 type: array    
               station_ids:    
-                description: 'Array of identifiers of the stations for which this alert applies.'    
+                description: Array of identifiers of the stations for which this alert applies.    
                 items:    
                   type: string    
                 type: array    
               summary:    
-                description: 'A short summary of this alert to be displayed to the customer.'    
+                description: A short summary of this alert to be displayed to the customer.    
                 type: string    
               times:    
                 additionalItems: false    
-                description: 'Array of objects indicating when the alert is in effect.'    
+                description: Array of objects indicating when the alert is in effect.    
                 items:    
                   properties:    
                     end:    
-                      description: 'End time of the alert.'    
+                      description: End time of the alert.    
                       minimum: 1450155600    
                       type: number    
                     start:    
-                      description: 'Start time of the alert.'    
+                      description: Start time of the alert.    
                       minimum: 1450155600    
                       type: number    
                   type: object    
@@ -79,7 +80,7 @@ system_alerts:
                   - start    
                 type: array    
               type:    
-                description: 'Type of alert.'    
+                description: Type of alert.    
                 enum:    
                   - system_closure    
                   - station_closure    
@@ -87,7 +88,7 @@ system_alerts:
                   - other    
                 type: string    
               url:    
-                description: 'URL where the customer can learn more information about this alert.'    
+                description: URL where the customer can learn more information about this alert.    
                 format: uri    
                 type: string    
             required:    
@@ -103,31 +104,35 @@ system_alerts:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be system_alerts'    
+      description: NGSI entity type. It has to be system_alerts    
       enum:    
         - system_alerts    
       type: string    
@@ -158,7 +163,7 @@ system_alerts:
     - type    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/system_alerts/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/system_alerts/schema.json    
   x-model-tags: GBFS    
@@ -171,7 +176,7 @@ system_alerts:
 <!-- 80-Examples -->  
 ## Beispiel-Nutzlasten  
 #### system_alerts NGSI-v2 key-values Beispiel  
-Hier ist ein Beispiel für system_alerts im JSON-LD Format als key-values. Dies ist mit NGSI-v2 kompatibel, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
+Hier ist ein Beispiel für system_alerts im JSON-LD-Format als Key-Values. Dies ist kompatibel mit NGSI-v2, wenn `options=keyValues` verwendet wird und liefert die Kontextdaten einer einzelnen Entität.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
