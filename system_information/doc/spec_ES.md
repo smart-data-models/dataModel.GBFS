@@ -7,15 +7,28 @@
 [documento generado automáticamente](https://docs.google.com/presentation/d/e/2PACX-1vTs-Ng5dIAwkg91oTTUdt8ua7woBXhPnwavZ0FxgR8BsAI_Ek3C5q97Nd94HS8KhP-r_quD4H0fgyt3/pub?start=false&loop=false&delayms=3000#slide=id.gb715ace035_0_60)  
 <!-- /15-License -->  
 <!-- 20-Description -->  
-Descripción global: **Detalles que incluyen el operador del sistema, la ubicación del sistema, el año de implementación, la URL, la información de contacto, la zona horaria. Según la norma GBFS 2.2**  
+Descripción global: **Detalles que incluyen operador del sistema, ubicación del sistema, año de implantación, URL, información de contacto, zona horaria. Según la Norma GBFS 2.2**  
 versión: 0.0.1  
 <!-- /20-Description -->  
 <!-- 30-PropertiesList -->  
 
 ## Lista de propiedades  
 
-<sup><sub>[*] Si no hay un tipo en un atributo es porque puede tener varios tipos o diferentes formatos/patrones</sub></sup>  
-- `data[object]`: Datos de respuesta en forma de pares nombre:valor.  - `id[*]`: Identificador único de la entidad  - `last_updated[integer]`: Última vez que se actualizaron los datos del feed en tiempo POSIX.  - `ttl[integer]`: Número de segundos antes de que los datos del feed se actualicen de nuevo (0 si los datos deben actualizarse siempre).  - `type[string]`: Tipo de entidad NGSI. Tiene que ser system_information  - `version[string]`: Número de versión de GBFS al que se ajusta el feed, según el marco de versiones (añadido en la v1.1).  <!-- /30-PropertiesList -->  
+<sup><sub>[*] Si no hay un tipo en un atributo es porque puede tener varios tipos o diferentes formatos/patrones</sub></sup>.  
+- `data[object]`: Datos de respuesta en forma de pares nombre:valor.  	- `email[email]`: Dirección de correo electrónico supervisada activamente por el servicio de atención al cliente del operador.    
+	- `feed_contact_email[email]`: Una única dirección de correo electrónico de contacto para que los consumidores de este feed puedan informar de problemas técnicos (añadida en la v1.1).    
+	- `language[string]`: El idioma que se utilizará en el resto de los archivos. Debe coincidir con el valor del archivo gbfs.json.    
+	- `license_url[uri]`: URL completa de una página que define los términos de licencia de los datos GBFS para este sistema.    
+	- `name[string]`: Nombre del sistema que se mostrará a los clientes.    
+	- `operator[string]`: Nombre del operador    
+	- `phone_number[string]`: Un único número de teléfono vocal para el sistema especificado que presenta el número de teléfono como típico para el área de servicio del sistema.    
+	- `purchase_url[uri]`: URL donde un cliente puede comprar una membresía.    
+	- `rental_apps[object]`: Contiene información de la aplicación de alquiler en los objetos JSON de android e ios (añadidos en la v1.1).    
+	- `short_name[string]`: Abreviatura opcional de un sistema.    
+	- `start_date[string]`: Fecha de entrada en funcionamiento del sistema.    
+	- `system_id[string]`: Identificador de este sistema de vehículos compartidos. Debe ser único a nivel mundial (incluso entre diferentes sistemas).    
+	- `timezone[string]`: La zona horaria donde se encuentra el sistema.    
+- `id[*]`: Identificador único de la entidad  - `last_updated[integer]`: Última vez que se actualizaron los datos del feed en tiempo POSIX.  - `ttl[integer]`: Número de segundos antes de que los datos del feed se actualicen de nuevo (0 si los datos deben actualizarse siempre).  - `type[string]`: Tipo de entidad NGSI. Tiene que ser system_information  - `version[string]`: Número de versión de GBFS al que se ajusta el feed, según el marco de versiones (añadido en la v1.1).  <!-- /30-PropertiesList -->  
 <!-- 35-RequiredProperties -->  
 Propiedades requeridas  
 - `data`  - `id`  - `last_updated`  - `ttl`  - `type`  - `version`  <!-- /35-RequiredProperties -->  
@@ -23,8 +36,8 @@
 Asignación de la norma [GBFS 2.2](https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md)  
 <!-- /40-RequiredProperties -->  
 <!-- 50-DataModelHeader -->  
-## Descripción del modelo de datos de las propiedades  
-Ordenados alfabéticamente (haga clic para ver los detalles)  
+## Descripción de las propiedades del modelo de datos  
+Ordenados alfabéticamente (pulse para más detalles)  
 <!-- /50-DataModelHeader -->  
 <!-- 60-ModelYaml -->  
 <details><summary><strong>full yaml details</strong></summary>    
@@ -36,50 +49,50 @@ system_information:
       description: 'Response data in the form of name:value pairs.'    
       properties:    
         email:    
-          description: 'Email address actively monitored by the operator''s customer service department.'    
+          description: Email address actively monitored by the operator's customer service department.    
           format: email    
           type: string    
         feed_contact_email:    
-          description: 'A single contact email address for consumers of this feed to report technical issues (added in v1.1).'    
+          description: A single contact email address for consumers of this feed to report technical issues (added in v1.1).    
           format: email    
           type: string    
         language:    
-          description: 'The language that will be used throughout the rest of the files. It must match the value in the gbfs.json file.'    
+          description: The language that will be used throughout the rest of the files. It must match the value in the gbfs.json file.    
           pattern: ^[a-z]{2,3}(-[A-Z]{2})?$    
           type: string    
         license_url:    
-          description: 'A fully qualified URL of a page that defines the license terms for the GBFS data for this system.'    
+          description: A fully qualified URL of a page that defines the license terms for the GBFS data for this system.    
           format: uri    
           type: string    
         name:    
-          description: 'Name of the system to be displayed to customers.'    
+          description: Name of the system to be displayed to customers.    
           type: string    
         operator:    
-          description: 'Name of the operator'    
+          description: Name of the operator    
           type: string    
         phone_number:    
-          description: 'A single voice telephone number for the specified system that presents the telephone number as typical for the system''s service area.'    
+          description: A single voice telephone number for the specified system that presents the telephone number as typical for the system's service area.    
           type: string    
         purchase_url:    
-          description: 'URL where a customer can purchase a membership.'    
+          description: URL where a customer can purchase a membership.    
           format: uri    
           type: string    
         rental_apps:    
-          description: 'Contains rental app information in the android and ios JSON objects (added in v1.1).'    
+          description: Contains rental app information in the android and ios JSON objects (added in v1.1).    
           properties:    
             android:    
               dependencies:    
                 android:    
                   - store_uri    
                   - discovery_uri    
-              description: 'Contains rental app download and app discovery information for the Android platform. (added in v1.1)'    
+              description: Contains rental app download and app discovery information for the Android platform. (added in v1.1)    
               properties:    
                 discovery_uri:    
-                  description: 'URI that can be used to discover if the rental Android app is installed on the device (added in v1.1).'    
+                  description: URI that can be used to discover if the rental Android app is installed on the device (added in v1.1).    
                   format: uri    
                   type: string    
                 store_uri:    
-                  description: 'URI where the rental Android app can be downloaded from (added in v1.1).'    
+                  description: URI where the rental Android app can be downloaded from (added in v1.1).    
                   format: uri    
                   type: string    
               type: object    
@@ -88,33 +101,33 @@ system_information:
                 ios:    
                   - store_uri    
                   - discovery_uri    
-              description: 'Contains rental information for the iOS platform (added in v1.1).'    
+              description: Contains rental information for the iOS platform (added in v1.1).    
               properties:    
                 discovery_uri:    
-                  description: 'URI that can be used to discover if the rental iOS app is installed on the device (added in v1.1).'    
+                  description: URI that can be used to discover if the rental iOS app is installed on the device (added in v1.1).    
                   format: uri    
                   type: string    
                 store_uri:    
-                  description: 'URI where the rental iOS app can be downloaded from (added in v1.1).'    
+                  description: URI where the rental iOS app can be downloaded from (added in v1.1).    
                   format: uri    
                   type: string    
               type: object    
           type: object    
         short_name:    
-          description: 'Optional abbreviation for a system.'    
+          description: Optional abbreviation for a system.    
           type: string    
         start_date:    
-          description: 'Date that the system began operations.'    
+          description: Date that the system began operations.    
           pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2}$    
           type: string    
         system_id:    
-          description: 'Identifier for this vehicle share system. This should be globally unique (even between different systems).'    
+          description: Identifier for this vehicle share system. This should be globally unique (even between different systems).    
           type: string    
         timezone:    
-          description: 'The time zone where the system is located.'    
+          description: The time zone where the system is located.    
           type: string    
         url:    
-          description: 'The URL of the vehicle share system.'    
+          description: The URL of the vehicle share system.    
           format: uri    
           type: string    
       required:    
@@ -127,31 +140,35 @@ system_information:
         type: Property    
     id:    
       anyOf:    
-        - description: 'Property. Identifier format of any NGSI entity'    
+        - description: Identifier format of any NGSI entity    
           maxLength: 256    
           minLength: 1    
           pattern: ^[\w\-\.\{\}\$\+\*\[\]`|~^@!,:\\]+$    
           type: string    
-        - description: 'Property. Identifier format of any NGSI entity'    
+          x-ngsi:    
+            type: Property    
+        - description: Identifier format of any NGSI entity    
           format: uri    
           type: string    
-      description: 'Unique identifier of the entity'    
+          x-ngsi:    
+            type: Property    
+      description: Unique identifier of the entity    
       x-ngsi:    
         type: Property    
     last_updated:    
-      description: 'Last time the data in the feed was updated in POSIX time.'    
+      description: Last time the data in the feed was updated in POSIX time.    
       minimum: 1450155600    
       type: integer    
       x-ngsi:    
         type: Property    
     ttl:    
-      description: 'Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).'    
+      description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).    
       minimum: 0    
       type: integer    
       x-ngsi:    
         type: Property    
     type:    
-      description: 'NGSI entity type. It has to be system_information'    
+      description: NGSI entity type. It has to be system_information    
       enum:    
         - system_information    
       type: string    
@@ -180,7 +197,7 @@ system_information:
     - version    
   type: object    
   x-derived-from: https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md    
-  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2021 Contributors to Smart Data Models Program'    
+  x-disclaimer: 'Redistribution and use in source and binary forms, with or without modification, are permitted  provided that the license conditions are met. Copyleft (c) 2022 Contributors to Smart Data Models Program'    
   x-license-url: https://github.com/smart-data-models/dataModel.GBFS/blob/master/system_information/LICENSE.md    
   x-model-schema: https://smart-data-models.github.io/dataModel.GBFS/system_information/schema.json    
   x-model-tags: GBFS    
@@ -193,7 +210,7 @@ system_information:
 <!-- 80-Examples -->  
 ## Ejemplo de carga útil  
 #### system_information NGSI-v2 key-values Ejemplo  
-Aquí hay un ejemplo de system_information en formato JSON-LD como key-values. Esto es compatible con NGSI-v2 cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+He aquí un ejemplo de system_information en formato JSON-LD como key-values. Esto es compatible con NGSI-v2 cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -228,7 +245,7 @@ system_information:
 ```  
 </details>  
 #### system_information NGSI-v2 normalized Ejemplo  
-Este es un ejemplo de system_information en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+He aquí un ejemplo de system_information en formato JSON-LD normalizado. Esto es compatible con NGSI-v2 cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -278,7 +295,7 @@ system_information:
 ```  
 </details>  
 #### system_information NGSI-LD key-values Ejemplo  
-Aquí hay un ejemplo de system_information en formato JSON-LD como key-values. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
+He aquí un ejemplo de system_information en formato JSON-LD como key-values. Esto es compatible con NGSI-LD cuando se utiliza `options=keyValues` y devuelve los datos de contexto de una entidad individual.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -316,8 +333,8 @@ system_information:
 }  
 ```  
 </details>  
-#### system_information NGSI-LD normalizado Ejemplo  
-Este es un ejemplo de system_information en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
+#### system_information NGSI-LD normalized Ejemplo  
+He aquí un ejemplo de system_information en formato JSON-LD normalizado. Esto es compatible con NGSI-LD cuando no se utilizan opciones y devuelve los datos de contexto de una entidad individual.  
 <details><summary><strong>show/hide example</strong></summary>    
 ```json  
 {  
@@ -370,7 +387,7 @@ system_information:
 <!-- 90-FooterNotes -->  
 <!-- /90-FooterNotes -->  
 <!-- 95-Units -->  
-Consulte [FAQ 10](https://smartdatamodels.org/index.php/faqs/) para obtener una respuesta sobre cómo tratar las unidades de magnitud  
+Consulte [FAQ 10](https://smartdatamodels.org/index.php/faqs/) para obtener una respuesta sobre cómo tratar las unidades de magnitud.  
 <!-- /95-Units -->  
 <!-- 97-LastFooter -->  
 ---  
