@@ -1,3 +1,3 @@
-/* (Beta) Export of data model gbfs_versions of the subject dataModel.GBFS for a postgreSQL database. Pending translation of enumerations and multityped attributes */
-CREATE TYPE gbfs_versions_type AS ENUM ('gbfs_versions');CREATE TYPE version_type AS ENUM ('1.1-RC', 1.1, '2.0-RC', 2.0, '2.1-RC', 2.1, 2.2, '3.0-RC', 3.0);
-CREATE TABLE gbfs_versions (data json, id text, last_updated integer, ttl integer, type gbfs_versions_type, version version_type);
+/* (Beta) Export of data model gbfs_versions of the subject dataModel.GBFS for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
+CREATE TYPE gbfs_versions_type AS ENUM ('gbfs_versions');CREATE TYPE version_type AS ENUM ('1.1-RC','1.1','2.0-RC','2.0','2.1-RC','2.1','2.2','3.0-RC','3.0');
+CREATE TABLE gbfs_versions (data JSON, last_updated INTEGER, ttl INTEGER, type gbfs_versions_type, version version_type);
