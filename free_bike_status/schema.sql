@@ -1,3 +1,3 @@
-/* (Beta) Export of data model free_bike_status of the subject dataModel.GBFS for a postgreSQL database. Pending translation of enumerations and multityped attributes */
-CREATE TYPE free_bike_status_type AS ENUM ('free_bike_status');CREATE TYPE version_type AS ENUM (2.2, '3.0-RC', 3.0);
-CREATE TABLE free_bike_status (data json, id text, last_updated integer, ttl integer, type free_bike_status_type, version version_type);
+/* (Beta) Export of data model free_bike_status of the subject dataModel.GBFS for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
+CREATE TYPE free_bike_status_type AS ENUM ('free_bike_status');CREATE TYPE version_type AS ENUM ('2.2','3.0-RC','3.0');
+CREATE TABLE free_bike_status (data JSON, last_updated INTEGER, ttl INTEGER, type free_bike_status_type, version version_type);
