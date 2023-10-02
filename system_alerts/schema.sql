@@ -1,3 +1,3 @@
-/* (Beta) Export of data model system_alerts of the subject dataModel.GBFS for a postgreSQL database. Pending translation of enumerations and multityped attributes */
-CREATE TYPE system_alerts_type AS ENUM ('system_alerts');CREATE TYPE version_type AS ENUM ('1.1-RC', 1.1, '2.0-RC', 2.0, '2.1-RC', '2.1-RC2', 2.1, 2.2, '3.0-RC', 3.0);
-CREATE TABLE system_alerts (data json, id text, last_updated integer, ttl integer, type system_alerts_type, version version_type);
+/* (Beta) Export of data model system_alerts of the subject dataModel.GBFS for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
+CREATE TYPE system_alerts_type AS ENUM ('system_alerts');CREATE TYPE version_type AS ENUM ('1.1-RC','1.1','2.0-RC','2.0','2.1-RC','2.1-RC2','2.1','2.2','3.0-RC','3.0');
+CREATE TABLE system_alerts (data JSON, last_updated INTEGER, ttl INTEGER, type system_alerts_type, version version_type);
