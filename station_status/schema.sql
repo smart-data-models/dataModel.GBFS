@@ -1,3 +1,3 @@
-/* (Beta) Export of data model station_status of the subject dataModel.GBFS for a postgreSQL database. Pending translation of enumerations and multityped attributes */
-CREATE TYPE station_status_type AS ENUM ('station_status');CREATE TYPE version_type AS ENUM ('2.1-RC2', 2.1, 2.2, 3.0);
-CREATE TABLE station_status (data json, id text, last_updated integer, ttl integer, type station_status_type, version version_type);
+/* (Beta) Export of data model station_status of the subject dataModel.GBFS for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
+CREATE TYPE station_status_type AS ENUM ('station_status');CREATE TYPE version_type AS ENUM ('2.1-RC2','2.1','2.2','3.0');
+CREATE TABLE station_status (data JSON, last_updated INTEGER, ttl INTEGER, type station_status_type, version version_type);
