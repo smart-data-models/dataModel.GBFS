@@ -1,3 +1,3 @@
 /* (Beta) Export of data model system_pricing_plans of the subject dataModel.GBFS for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
 CREATE TYPE system_pricing_plans_type AS ENUM ('system_pricing_plans');CREATE TYPE version_type AS ENUM ('2.2','3.0-RC','3.0');
-CREATE TABLE system_pricing_plans (data JSON, last_updated INTEGER, ttl INTEGER, type system_pricing_plans_type, version version_type);
+CREATE TABLE system_pricing_plans (data JSON, id TEXT PRIMARY KEY, last_updated INTEGER, ttl INTEGER, type system_pricing_plans_type, version version_type);
