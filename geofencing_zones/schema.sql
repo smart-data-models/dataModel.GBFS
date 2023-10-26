@@ -1,3 +1,3 @@
 /* (Beta) Export of data model geofencing_zones of the subject dataModel.GBFS for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
 CREATE TYPE geofencing_zones_type AS ENUM ('geofencing_zones');CREATE TYPE version_type AS ENUM ('2.1-RC','2.1-RC2','2.1','2.2','3.0-RC','3.0');
-CREATE TABLE geofencing_zones (data JSON, last_updated INTEGER, ttl INTEGER, type geofencing_zones_type, version version_type);
+CREATE TABLE geofencing_zones (data JSON, id TEXT PRIMARY KEY, last_updated INTEGER, ttl INTEGER, type geofencing_zones_type, version version_type);
