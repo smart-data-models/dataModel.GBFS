@@ -1,3 +1,3 @@
 /* (Beta) Export of data model system_information of the subject dataModel.GBFS for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
 CREATE TYPE system_information_type AS ENUM ('system_information');CREATE TYPE version_type AS ENUM ('1.1-RC','1.1','2.0','2.1-RC','2.1-RC2','2.1','2.2','3.0');
-CREATE TABLE system_information (data JSON, last_updated INTEGER, ttl INTEGER, type system_information_type, version version_type);
+CREATE TABLE system_information (data JSON, id TEXT PRIMARY KEY, last_updated INTEGER, ttl INTEGER, type system_information_type, version version_type);
