@@ -1,2 +1,2 @@
-"id_", "type_", "last_updated_", "ttl_", "version_", "data__feeds__0__name_", "data__feeds__0__url_", "data__feeds__1__name_", "data__feeds__1__url_", "@context__0_"
-"urn:ngsi-ld:gbfs:id:UKBQ:60920452", "gbfs", "1450156395", "566", "2.1", "station_information", "urn:ngsi-ld:gbfs:url:EPHA:59077032", "system_hours", "urn:ngsi-ld:gbfs:url:GDPS:83970346", "https://smartdatamodels.org/context.jsonld"
+"id_", "type_", "last_updated_", "ttl_", "version_", "data__feeds__0__name_", "data__feeds__0__url_", "data__feeds__1__name_", "data__feeds__1__url_", "@context__0_", "@context__1_"
+"urn:ngsi-ld:gbfs:id:UKBQ:60920452", "gbfs", "1450156395", "566", "2.1", "station_information", "urn:ngsi-ld:gbfs:url:EPHA:59077032", "system_hours", "urn:ngsi-ld:gbfs:url:GDPS:83970346", "https://smartdatamodels.org/context.jsonld", "https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/context.jsonld"
