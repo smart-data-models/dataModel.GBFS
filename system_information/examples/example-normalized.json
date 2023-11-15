@@ -37,8 +37,5 @@
         "terms_url": "https://www.example.com/assets/brand.pdf"
       }
     }
-  },
-  "@context": [
-    "https://smartdatamodels.org/context.jsonld"
-  ]
+  }
 }
