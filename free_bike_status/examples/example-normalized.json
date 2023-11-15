@@ -2,19 +2,19 @@
   "id": "urn:ngsi-ld:free_bike_status:id:ZMAW:94046191",
   "type": "free_bike_status",
   "last_updated": {
-    "type": "number",
+    "type": "Number",
     "value": 1450156464
   },
   "ttl": {
-    "type": "number",
+    "type": "Number",
     "value": 864
   },
   "version": {
-    "type": "string",
+    "type": "Text",
     "value": "3.0-RC"
   },
   "data": {
-    "type": "object",
+    "type": "StructuredValue",
     "value": {
       "bikes": [
         {
