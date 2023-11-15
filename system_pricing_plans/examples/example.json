@@ -23,7 +23,7 @@
         "per_min_pricing": [
           {
             "start": 0,
-            "rate": 0.50,
+            "rate": 0.5,
             "interval": 1
           }
         ]
