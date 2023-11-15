@@ -6,8 +6,8 @@
     "value": 1609866247
   },
   "ttl": {
-    "type": "Number",
-    "value": 0
+    "type": "Boolean",
+    "value": false
   },
   "version": {
     "type": "Text",
@@ -34,15 +34,12 @@
           "per_min_pricing": [
             {
               "start": 0,
-              "rate": 0.50,
+              "rate": 0.5,
               "interval": 1
             }
           ]
         }
       ]
     }
-  },
-  "@context": [
-    "https://smartdatamodels.org/context.jsonld"
-  ]
+  }
 }
