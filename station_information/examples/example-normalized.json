@@ -6,8 +6,8 @@
     "value": 1609866247
   },
   "ttl": {
-    "type": "Number",
-    "value": 0
+    "type": "Boolean",
+    "value": false
   },
   "version": {
     "type": "Text",
