@@ -1,58 +1,58 @@
 {
-    "id": "urn:ngsi-ld:station_information:id:FNNO:60592292",
-    "type": "station_information",
-    "last_updated": 1609866247,
-    "ttl": 0,
-    "version": "3.0",
-    "data": {
-        "stations": [
-            {
-                "station_id": "station12",
-                "name": "SE Belmont & SE 10 th",
-                "lat": -82.655775,
-                "lon": 45.516445,
-                "is_valet_station": false,
-                "is_virtual_station": true,
-                "station_area": {
-                    "type": "Multipolygon",
-                    "coordinates": [
-                        [
-                            [
-                                [
-                                    -122.655775,
-                                    45.516445
-                                ],
-                                [
-                                    -122.655705,
-                                    45.516445
-                                ],
-                                [
-                                    -122.655705,
-                                    45.516495
-                                ],
-                                [
-                                    -122.655775,
-                                    45.516495
-                                ],
-                                [
-                                    -122.655775,
-                                    45.516445
-                                ]
-                            ]
-                        ]
-                    ]
-                },
-                "capacity": 16,
-                "vehicle_capacity": {
-                    "abc123": 8,
-                    "def456": 8,
-                    "ghi789": 16
-                }
-            }
-        ]
-    },
-    "@context": [
-        "https://smartdatamodels.org/context.jsonld",
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/context.jsonld"
+  "id": "urn:ngsi-ld:station_information:id:FNNO:60592292",
+  "type": "station_information",
+  "last_updated": 1609866247,
+  "ttl": 0,
+  "version": "3.0",
+  "data": {
+    "stations": [
+      {
+        "station_id": "station12",
+        "name": "SE Belmont & SE 10 th",
+        "lat": -82.655775,
+        "lon": 45.516445,
+        "is_valet_station": false,
+        "is_virtual_station": true,
+        "station_area": {
+          "type": "Multipolygon",
+          "coordinates": [
+            [
+              [
+                [
+                  -122.655775,
+                  45.516445
+                ],
+                [
+                  -122.655705,
+                  45.516445
+                ],
+                [
+                  -122.655705,
+                  45.516495
+                ],
+                [
+                  -122.655775,
+                  45.516495
+                ],
+                [
+                  -122.655775,
+                  45.516445
+                ]
+              ]
+            ]
+          ]
+        },
+        "capacity": 16,
+        "vehicle_capacity": {
+          "abc123": 8,
+          "def456": 8,
+          "ghi789": 16
+        }
+      }
     ]
+  },
+  "@context": [
+    "https://smartdatamodels.org/context.jsonld",
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/context.jsonld"
+  ]
 }
