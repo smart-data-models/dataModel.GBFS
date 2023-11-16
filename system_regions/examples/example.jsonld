@@ -1,31 +1,31 @@
 {
-    "id": "urn:ngsi-ld:system_regions:id:FNNO:60592292",
-    "type": "system_regions",
-    "last_updated": 1604332380,
-    "ttl": 86400,
-    "version": "3.0",
-    "data": {
-        "regions": [
-            {
-                "name": "North",
-                "region_id": "3"
-            },
-            {
-                "name": "East",
-                "region_id": "4"
-            },
-            {
-                "name": "South",
-                "region_id": "5"
-            },
-            {
-                "name": "West",
-                "region_id": "6"
-            }
-        ]
-    },
-    "@context": [
-        "https://smartdatamodels.org/context.jsonld",
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/context.jsonld"
+  "id": "urn:ngsi-ld:system_regions:id:FNNO:60592292",
+  "type": "system_regions",
+  "last_updated": 1604332380,
+  "ttl": 86400,
+  "version": "3.0",
+  "data": {
+    "regions": [
+      {
+        "name": "North",
+        "region_id": "3"
+      },
+      {
+        "name": "East",
+        "region_id": "4"
+      },
+      {
+        "name": "South",
+        "region_id": "5"
+      },
+      {
+        "name": "West",
+        "region_id": "6"
+      }
     ]
+  },
+  "@context": [
+    "https://smartdatamodels.org/context.jsonld",
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/context.jsonld"
+  ]
 }
