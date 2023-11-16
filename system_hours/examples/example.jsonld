@@ -1,52 +1,52 @@
 {
-    "id": "urn:ngsi-ld:system_hours:id:FNNO:60592292",
-    "type": "system_hours",
-    "last_updated": 1609866247,
-    "ttl": 86400,
-    "version": "3.0",
-    "data": {
-        "rental_hours": [
-            {
-                "user_types": [
-                    "member"
-                ],
-                "days": [
-                    "sat",
-                    "sun"
-                ],
-                "start_time": "00:00:00",
-                "end_time": "23:59:59"
-            },
-            {
-                "user_types": [
-                    "nonmember"
-                ],
-                "days": [
-                    "sat",
-                    "sun"
-                ],
-                "start_time": "05:00:00",
-                "end_time": "23:59:59"
-            },
-            {
-                "user_types": [
-                    "member",
-                    "nonmember"
-                ],
-                "days": [
-                    "mon",
-                    "tue",
-                    "wed",
-                    "thu",
-                    "fri"
-                ],
-                "start_time": "00:00:00",
-                "end_time": "23:59:59"
-            }
-        ]
-    },
-    "@context": [
-        "https://smartdatamodels.org/context.jsonld",
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/context.jsonld"
+  "id": "urn:ngsi-ld:system_hours:id:FNNO:60592292",
+  "type": "system_hours",
+  "last_updated": 1609866247,
+  "ttl": 86400,
+  "version": "3.0",
+  "data": {
+    "rental_hours": [
+      {
+        "user_types": [
+          "member"
+        ],
+        "days": [
+          "sat",
+          "sun"
+        ],
+        "start_time": "00:00:00",
+        "end_time": "23:59:59"
+      },
+      {
+        "user_types": [
+          "nonmember"
+        ],
+        "days": [
+          "sat",
+          "sun"
+        ],
+        "start_time": "05:00:00",
+        "end_time": "23:59:59"
+      },
+      {
+        "user_types": [
+          "member",
+          "nonmember"
+        ],
+        "days": [
+          "mon",
+          "tue",
+          "wed",
+          "thu",
+          "fri"
+        ],
+        "start_time": "00:00:00",
+        "end_time": "23:59:59"
+      }
     ]
+  },
+  "@context": [
+    "https://smartdatamodels.org/context.jsonld",
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.GBFS/master/context.jsonld"
+  ]
 }
