@@ -24,31 +24,36 @@
 #         curl -X GET http://localhost:1026/ngsi-ld/v1/entities?local=true&limit=1000
 #         
 #         # now the python code you can use to insert some value in the context broker according to the data model
+#         # Version Warning! 
+#         # This code is designed to work with the version 0.8 of pysmartdatamodels or later
+#         # to work with earlier version you need to replace the import instruction for
+#         # from pysmartdatamodels import pysmartdatamodels as sdm
 #         
-from pysmartdatamodels import pysmartdatamodels as sdm
+#         
+import pysmartdatamodels as sdm
 import subprocess
 serverUrl = "http://localhost:1026" # supposed that your broker is installed in localhost. Edit to match your configuration
 dataModel = "system_alerts"
 subject = "dataModel.GBFS"
-last_updated = {'type': 'Property', 'value': 1604198100}
+last_updated = 1604198100
 attribute = "last_updated"
 value = last_updated
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-ttl = {'type': 'Property', 'value': 60}
+ttl = 60
 attribute = "ttl"
 value = ttl
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-version = "{'type': 'Property', 'value': '3.0'}"
+version = "3.0"
 attribute = "version"
 value = version
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-data = {'type': 'Property', 'value': {'alerts': [{'alert_id': '21', 'type': 'station_closure', 'station_ids': ['123', '456', '789'], 'times': [{'start': 1604448000, 'end': 1604674800}], 'url': 'https://example.com/more-info', 'summary': 'Disruption of Service', 'description': 'The three stations on Broadway will be out of service from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work', 'last_updated': 1604519393}]}}
+data = {'alerts': [{'alert_id': '21', 'type': 'station_closure', 'station_ids': ['123', '456', '789'], 'times': [{'start': 1604448000, 'end': 1604674800}], 'url': 'https://example.com/more-info', 'summary': 'Disruption of Service', 'description': 'The three stations on Broadway will be out of service from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work', 'last_updated': 1604519393}]}
 attribute = "data"
 value = data
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
