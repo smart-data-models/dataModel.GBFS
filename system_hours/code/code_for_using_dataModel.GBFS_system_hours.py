@@ -24,31 +24,36 @@
 #         curl -X GET http://localhost:1026/ngsi-ld/v1/entities?local=true&limit=1000
 #         
 #         # now the python code you can use to insert some value in the context broker according to the data model
+#         # Version Warning! 
+#         # This code is designed to work with the version 0.8 of pysmartdatamodels or later
+#         # to work with earlier version you need to replace the import instruction for
+#         # from pysmartdatamodels import pysmartdatamodels as sdm
 #         
-from pysmartdatamodels import pysmartdatamodels as sdm
+#         
+import pysmartdatamodels as sdm
 import subprocess
 serverUrl = "http://localhost:1026" # supposed that your broker is installed in localhost. Edit to match your configuration
 dataModel = "system_hours"
 subject = "dataModel.GBFS"
-last_updated = {'type': 'Property', 'value': 1609866247}
+last_updated = 1609866247
 attribute = "last_updated"
 value = last_updated
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-ttl = {'type': 'Property', 'value': 86400}
+ttl = 86400
 attribute = "ttl"
 value = ttl
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-version = "{'type': 'Property', 'value': '3.0'}"
+version = "3.0"
 attribute = "version"
 value = version
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-data = {'type': 'Property', 'value': {'rental_hours': [{'user_types': ['member'], 'days': ['sat', 'sun'], 'start_time': '00:00:00', 'end_time': '23:59:59'}, {'user_types': ['nonmember'], 'days': ['sat', 'sun'], 'start_time': '05:00:00', 'end_time': '23:59:59'}, {'user_types': ['member', 'nonmember'], 'days': ['mon', 'tue', 'wed', 'thu', 'fri'], 'start_time': '00:00:00', 'end_time': '23:59:59'}]}}
+data = {'rental_hours': [{'user_types': ['member'], 'days': ['sat', 'sun'], 'start_time': '00:00:00', 'end_time': '23:59:59'}, {'user_types': ['nonmember'], 'days': ['sat', 'sun'], 'start_time': '05:00:00', 'end_time': '23:59:59'}, {'user_types': ['member', 'nonmember'], 'days': ['mon', 'tue', 'wed', 'thu', 'fri'], 'start_time': '00:00:00', 'end_time': '23:59:59'}]}
 attribute = "data"
 value = data
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
