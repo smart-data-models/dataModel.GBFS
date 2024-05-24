@@ -24,31 +24,36 @@
 #         curl -X GET http://localhost:1026/ngsi-ld/v1/entities?local=true&limit=1000
 #         
 #         # now the python code you can use to insert some value in the context broker according to the data model
+#         # Version Warning! 
+#         # This code is designed to work with the version 0.8 of pysmartdatamodels or later
+#         # to work with earlier version you need to replace the import instruction for
+#         # from pysmartdatamodels import pysmartdatamodels as sdm
 #         
-from pysmartdatamodels import pysmartdatamodels as sdm
+#         
+import pysmartdatamodels as sdm
 import subprocess
 serverUrl = "http://localhost:1026" # supposed that your broker is installed in localhost. Edit to match your configuration
 dataModel = "system_information"
 subject = "dataModel.GBFS"
-last_updated = {'type': 'Property', 'value': 1611598155}
+last_updated = 1611598155
 attribute = "last_updated"
 value = last_updated
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-ttl = {'type': 'Property', 'value': 1800}
+ttl = 1800
 attribute = "ttl"
 value = ttl
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-version = "{'type': 'Property', 'value': '3.0'}"
+version = "3.0"
 attribute = "version"
 value = version
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-data = {'type': 'Property', 'value': {'system_id': 'example_cityname', 'language': 'en', 'name': 'Example Bike Rental', 'short_name': 'Example Bike', 'operator': 'Example Sharing, Inc', 'url': 'https://www.example.com', 'purchase_url': 'https://www.example.com', 'start_date': '2010-06-10', 'phone_number': '1-800-555-1234', 'email': 'customerservice@example.com', 'feed_contact_email': 'datafeed@example.com', 'timezone': 'US/Central', 'license_url': 'https://www.example.com/data-license.html', 'brand_assets': {'brand_last_modified': '2021-06-15', 'brand_image_url': 'https://www.example.com/assets/brand_image.svg', 'brand_image_url_dark': 'https://www.example.com/assets/brand_image_dark.svg', 'color': '#C2D32C', 'terms_url': 'https://www.example.com/assets/brand.pdf'}}}
+data = {'system_id': 'example_cityname', 'language': 'en', 'name': 'Example Bike Rental', 'short_name': 'Example Bike', 'operator': 'Example Sharing, Inc', 'url': 'https://www.example.com', 'purchase_url': 'https://www.example.com', 'start_date': '2010-06-10', 'phone_number': '1-800-555-1234', 'email': 'customerservice@example.com', 'feed_contact_email': 'datafeed@example.com', 'timezone': 'US/Central', 'license_url': 'https://www.example.com/data-license.html', 'brand_assets': {'brand_last_modified': '2021-06-15', 'brand_image_url': 'https://www.example.com/assets/brand_image.svg', 'brand_image_url_dark': 'https://www.example.com/assets/brand_image_dark.svg', 'color': '#C2D32C', 'terms_url': 'https://www.example.com/assets/brand.pdf'}}
 attribute = "data"
 value = data
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
