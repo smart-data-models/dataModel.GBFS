@@ -24,31 +24,36 @@
 #         curl -X GET http://localhost:1026/ngsi-ld/v1/entities?local=true&limit=1000
 #         
 #         # now the python code you can use to insert some value in the context broker according to the data model
+#         # Version Warning! 
+#         # This code is designed to work with the version 0.8 of pysmartdatamodels or later
+#         # to work with earlier version you need to replace the import instruction for
+#         # from pysmartdatamodels import pysmartdatamodels as sdm
 #         
-from pysmartdatamodels import pysmartdatamodels as sdm
+#         
+import pysmartdatamodels as sdm
 import subprocess
 serverUrl = "http://localhost:1026" # supposed that your broker is installed in localhost. Edit to match your configuration
 dataModel = "gbfs"
 subject = "dataModel.GBFS"
-last_updated = {'type': 'Property', 'value': 1450156395}
+last_updated = 1450156395
 attribute = "last_updated"
 value = last_updated
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-ttl = {'type': 'Property', 'value': 566}
+ttl = 566
 attribute = "ttl"
 value = ttl
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-version = "{'type': 'Property', 'value': '2.1'}"
+version = "2.1"
 attribute = "version"
 value = version
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-data = {'type': 'Property', 'value': {'feeds': [{'name': 'station_information', 'url': 'urn:ngsi-ld:gbfs:url:EPHA:59077032'}, {'name': 'system_hours', 'url': 'urn:ngsi-ld:gbfs:url:GDPS:83970346'}]}}
+data = {'feeds': [{'name': 'station_information', 'url': 'urn:ngsi-ld:gbfs:url:EPHA:59077032'}, {'name': 'system_hours', 'url': 'urn:ngsi-ld:gbfs:url:GDPS:83970346'}]}
 attribute = "data"
 value = data
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
