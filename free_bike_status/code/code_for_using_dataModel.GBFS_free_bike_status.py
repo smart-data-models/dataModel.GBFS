@@ -24,31 +24,36 @@
 #         curl -X GET http://localhost:1026/ngsi-ld/v1/entities?local=true&limit=1000
 #         
 #         # now the python code you can use to insert some value in the context broker according to the data model
+#         # Version Warning! 
+#         # This code is designed to work with the version 0.8 of pysmartdatamodels or later
+#         # to work with earlier version you need to replace the import instruction for
+#         # from pysmartdatamodels import pysmartdatamodels as sdm
 #         
-from pysmartdatamodels import pysmartdatamodels as sdm
+#         
+import pysmartdatamodels as sdm
 import subprocess
 serverUrl = "http://localhost:1026" # supposed that your broker is installed in localhost. Edit to match your configuration
 dataModel = "free_bike_status"
 subject = "dataModel.GBFS"
-last_updated = {'type': 'Property', 'value': 1450156464}
+last_updated = 1450156464
 attribute = "last_updated"
 value = last_updated
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-ttl = {'type': 'Property', 'value': 864}
+ttl = 864
 attribute = "ttl"
 value = ttl
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-version = "{'type': 'Property', 'value': '3.0-RC'}"
+version = "3.0-RC"
 attribute = "version"
 value = version
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
 print(sdm.update_broker(dataModel, subject, attribute, value, serverUrl=serverUrl, updateThenCreate=True))
 
-data = {'type': 'Property', 'value': {'bikes': [{'bike_id': 'bike:001:0023', 'lat': 9.6, 'lon': 18.6, 'is_reserved': True, 'is_disabled': False, 'rental_uris': {'android': 'urn:ngsi-ld:free_bike_status:android:DDCU:76475938', 'ios': 'urn:ngsi-ld:free_bike_status:ios:OJIQ:89241157', 'web': 'urn:ngsi-ld:free_bike_status:web:XCVS:38778408'}, 'vehicle_type_id': 'regular bike', 'last_reported': 1450156464, 'current_range_meters': 864.6, 'station_id': 'Madrid puerta del sol', 'pricing_plan_id': 'Tourist 1 day'}, {'bike_id': 'bike:001:0024', 'lat': 9.6, 'lon': 18.6, 'is_reserved': True, 'is_disabled': False, 'rental_uris': {'android': 'urn:ngsi-ld:free_bike_status:android:DDCU:76475938', 'ios': 'urn:ngsi-ld:free_bike_status:ios:OJIQ:89241157', 'web': 'urn:ngsi-ld:free_bike_status:web:XCVS:38778408'}, 'vehicle_type_id': 'regular bike', 'last_reported': 1450156464, 'current_range_meters': 864.6, 'station_id': 'Madrid puerta del sol', 'pricing_plan_id': 'Tourist 1 day'}]}}
+data = {'bikes': [{'bike_id': 'bike:001:0023', 'lat': 9.6, 'lon': 18.6, 'is_reserved': True, 'is_disabled': False, 'rental_uris': {'android': 'urn:ngsi-ld:free_bike_status:android:DDCU:76475938', 'ios': 'urn:ngsi-ld:free_bike_status:ios:OJIQ:89241157', 'web': 'urn:ngsi-ld:free_bike_status:web:XCVS:38778408'}, 'vehicle_type_id': 'regular bike', 'last_reported': 1450156464, 'current_range_meters': 864.6, 'station_id': 'Madrid puerta del sol', 'pricing_plan_id': 'Tourist 1 day'}, {'bike_id': 'bike:001:0024', 'lat': 9.6, 'lon': 18.6, 'is_reserved': True, 'is_disabled': False, 'rental_uris': {'android': 'urn:ngsi-ld:free_bike_status:android:DDCU:76475938', 'ios': 'urn:ngsi-ld:free_bike_status:ios:OJIQ:89241157', 'web': 'urn:ngsi-ld:free_bike_status:web:XCVS:38778408'}, 'vehicle_type_id': 'regular bike', 'last_reported': 1450156464, 'current_range_meters': 864.6, 'station_id': 'Madrid puerta del sol', 'pricing_plan_id': 'Tourist 1 day'}]}
 attribute = "data"
 value = data
 # The next line creates the query for inserting this attribute in a NGSI-LD context broker if the attribute does not exist it creates it
