@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://smart-data-models.github.io/dataModel.GBFS/system_pricing_plans/schema.json",
   "description": "Describes the pricing schemes of the system. According to the Standard GBFS 2.2",
   "type": "object",
