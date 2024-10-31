@@ -10,13 +10,13 @@
         "capacity": "https://smartdatamodels.org/dataModel.GBFS/capacity",
         "coordinates": {
             "@container": "@list",
-            "@id": "geojson:coordinates"
+            "@id": "https://purl.org/geojson/vocab#coordinates"
         },
         "count": "https://smartdatamodels.org/dataModel.GBFS/count",
         "cross_street": "https://smartdatamodels.org/dataModel.GBFS/cross_street",
         "currency": "https://smartdatamodels.org/dataModel.GBFS/currency",
         "current_range_meters": "https://smartdatamodels.org/dataModel.GBFS/current_range_meters",
-        "data": "ngsi-ld:data",
+        "data": "https://uri.etsi.org/ngsi-ld/data",
         "days": "https://smartdatamodels.org/dataModel.GBFS/days",
         "description": "http://purl.org/dc/terms/description",
         "discovery_uri": "https://smartdatamodels.org/dataModel.GBFS/discovery_uri",
@@ -28,7 +28,7 @@
         "end_year": "https://smartdatamodels.org/dataModel.GBFS/end_year",
         "features": {
             "@container": "@set",
-            "@id": "geojson:features"
+            "@id": "https://purl.org/geojson/vocab#features"
         },
         "feed_contact_email": "https://smartdatamodels.org/dataModel.GBFS/feed_contact_email",
         "form_factor": "https://smartdatamodels.org/dataModel.GBFS/form_factor",
@@ -36,7 +36,7 @@
         "gbfs": "https://smartdatamodels.org/dataModel.GBFS/gbfs",
         "gbfs_versions": "https://smartdatamodels.org/dataModel.GBFS/gbfs_versions",
         "geofencing_zones": "https://smartdatamodels.org/dataModel.GBFS/geofencing_zones",
-        "geometry": "geojson:geometry",
+        "geometry": "https://purl.org/geojson/vocab#geometry",
         "id": "@id",
         "interval": "https://smartdatamodels.org/dataModel.GBFS/interval",
         "ios": "https://smartdatamodels.org/dataModel.GBFS/ios",
