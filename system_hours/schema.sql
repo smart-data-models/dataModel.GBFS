@@ -1,11 +1,11 @@
 /* (Beta) Export of data model system_hours of the subject dataModel.GBFS for a PostgreSQL database. Pending translation of enumerations and multityped attributes */
 CREATE TYPE system_hours_type AS ENUM ('system_hours');
-CREATE TYPE version_type AS ENUM ('1.1-RC', '1.1', '2.0-RC', '2.0', '2.1-RC', '2.1-RC2', '2.1', '2.2', '3.0-RC', '3.0');
+CREATE TYPE system_hours_version_type AS ENUM ('1.1-RC', '1.1', '2.0-RC', '2.0', '2.1-RC', '2.1-RC2', '2.1', '2.2', '3.0-RC', '3.0');
 CREATE TABLE system_hours (
   "data" JSON,
   "id" TEXT PRIMARY KEY,
   "last_updated" INTEGER,
   "ttl" INTEGER,
   "type" system_hours_type,
-  "version" version_type
+  "version" system_hours_version_type
 );
